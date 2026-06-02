@@ -673,8 +673,8 @@
       max-width: var(--max);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
       padding-bottom: 60px;
       border-bottom: 1px solid var(--line);
     }
@@ -750,6 +750,118 @@
       .whatsapp-float svg { width: 28px; height: 28px; }
     }
 
+    /* ---------- Cabin extras (actions, price, video gallery, coming soon) ---------- */
+    .cabin-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .cabin .btn.btn-ghost:hover { background: var(--bg); color: var(--ink); }
+    .cabin.light .btn.btn-ghost:hover { background: var(--ink); color: var(--bg); }
+
+    .cabin-price {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      margin: 0 0 32px;
+      padding: 22px 0;
+      border-top: 1px solid rgba(200,155,63,0.4);
+      border-bottom: 1px solid rgba(200,155,63,0.4);
+    }
+    .price-item { display: flex; flex-direction: column; gap: 6px; }
+    .price-label {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+    .price-value {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--gold);
+    }
+    .cabin.light .price-value { color: var(--gold-deep); }
+    .price-value small {
+      display: block;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      opacity: 0.7;
+      margin-top: 7px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 60px;
+    }
+    .video-gallery .video-block { aspect-ratio: 9/16; max-height: none; }
+    .video-gallery .video-block::before { display: none; }
+    @media (max-width: 760px) {
+      .video-gallery { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; }
+    }
+
+    .coming-soon {
+      width: 100%;
+      aspect-ratio: 4/5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      text-align: center;
+      padding: 30px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--line);
+      background:
+        repeating-linear-gradient(45deg, rgba(168,123,34,0.05) 0 14px, transparent 14px 28px);
+    }
+    .coming-soon .cs-mark {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0.42em;
+      color: var(--gold-deep);
+    }
+    .coming-soon .cs-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: 0.08em;
+    }
+    .coming-soon .cs-text {
+      font-style: italic;
+      color: var(--muted);
+      max-width: 32ch;
+    }
+
+    /* ---------- Accommodations intro & package groups ---------- */
+    .acom-intro { padding-bottom: 26px; }
+    .pkg-group-label {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 34px;
+    }
+    .pkg-group-label.second { margin-top: 80px; }
+    .pkg-group-label span {
+      display: block;
+      font-style: italic;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      opacity: 0.7;
+      margin-top: 8px;
+    }
+
     /* ---------- Reveal on scroll ---------- */
     .reveal {
       opacity: 0;
@@ -778,8 +890,8 @@
       <img src="assets/imagens/logo.png" alt="Mirante Cabanas da Serra" />
     </a>
     <nav class="nav">
-      <a href="#cabanas">Cabanas</a>
-      <a href="#sobre">Sobre Nós</a>
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#acomodacoes">Acomodações</a>
       <a href="#pacotes">Pacotes</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -798,16 +910,17 @@
     <div class="scroll-cue">EXPLORE</div>
   </section>
 
-  <!-- INTRO -->
-  <section class="intro" id="sobre">
+  <!-- QUEM SOMOS -->
+  <section class="intro" id="quem-somos">
     <div class="container">
       <div class="intro-text reveal">
-        <div class="section-num">01 &middot; O REFÚGIO</div>
-        <h2 class="section-title" style="text-align:left;">Conforto, silêncio<br/>e uma vista inesquecível.</h2>
+        <div class="section-num">01 &middot; QUEM SOMOS</div>
+        <h2 class="section-title" style="text-align:left;">De uma banca à beira<br/>da estrada ao alto da serra.</h2>
         <span class="section-rule" style="margin-left:0;"></span>
-        <p style="margin-top:30px;">O Mirante Cabanas da Serra é um refúgio para os hóspedes e também o restaurante com a melhor vista do Rio Uruguai. As cabanas ficam a apenas 50&nbsp;metros do restaurante, o que torna a experiência completa &mdash; e cada refeição parte do convite.</p>
-        <p>Todas as refeições fazem parte do cardápio do restaurante, como o café da manhã, preparado e servido tanto na cabana quanto no restaurante. Aqui você terá o privilégio de viver conforto, silêncio e uma intimidade incrível.</p>
-        <p style="font-style:italic; color: var(--gold-deep);">Já fomos espaço de muitos pedidos &mdash; inclusive de casamento.</p>
+        <p style="margin-top:30px;">Tudo começou simples: uma banca de frutas à beira da BR. Logo veio o caldo de cana geladinho e o pastel quentinho, feitos com carinho para quem passava e parava &mdash; nem que fosse por um instante.</p>
+        <p>Com o passar dos anos, fomos cuidando de cada detalhe, melhorando e ampliando, sempre com o mesmo desejo de bem receber. Foi assim que nasceu o Mirante &mdash; hoje, ao mesmo tempo, o restaurante com a melhor vista do Rio Uruguai e o lar de duas cabanas próprias: a <strong>Cabana Amor</strong> e a <strong>Cabana Fé</strong>.</p>
+        <p>Em 2026, demos um novo passo e abrimos as portas para as cabanas parceiras &mdash; o <strong>Bangalô Dona Maria</strong> e o <strong>Refúgio Águas do Goio-Ên</strong> &mdash;, ampliando o convite para que mais casais vivam momentos inesquecíveis em meio à natureza.</p>
+        <p style="font-style:italic; color: var(--gold-deep);">Daquela primeira banca ao alto da serra, uma coisa nunca mudou: o prazer de receber bem. Já fomos cenário de muitos momentos especiais &mdash; inclusive pedidos de casamento.</p>
       </div>
       <div class="intro-image reveal">
         <img src="assets/imagens/cafe.png" alt="Café da manhã servido na cabana com vista para o Rio Uruguai" loading="lazy" />
@@ -815,12 +928,23 @@
     </div>
   </section>
 
+  <!-- ACOMODAÇÕES (intro) -->
+  <section class="amenities acom-intro" id="acomodacoes">
+    <div class="container">
+      <div class="section-head reveal" style="margin-bottom:0;">
+        <div class="section-num">02 &middot; NOSSAS ACOMODAÇÕES</div>
+        <h2 class="section-title">Confira algumas de<br/>nossas acomodações</h2>
+        <span class="section-rule"></span>
+      </div>
+    </div>
+  </section>
+
   <!-- CABANA FÉ -->
-  <section class="cabin" id="cabanas">
+  <section class="cabin">
     <div class="container">
       <div class="cabin-grid">
         <div class="cabin-copy reveal">
-          <div class="section-num">02 &middot; PRIMEIRA CABANA</div>
+          <div class="section-num">CABANA PRÓPRIA</div>
           <h3>Cabana Fé</h3>
           <p class="lead">Um espaço de quietude e luz natural, onde a vista da serra se torna parte da estadia.</p>
           <ul>
@@ -830,7 +954,10 @@
             <li>Decoração romântica opcional</li>
             <li>A 50&nbsp;metros do restaurante</li>
           </ul>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20a%20Cabana%20Fé." class="btn btn-gold" target="_blank" rel="noopener">Reservar Cabana Fé</a>
+          <div class="cabin-actions">
+            <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20a%20Cabana%20Fé." class="btn btn-gold" target="_blank" rel="noopener">Reservar Cabana Fé</a>
+            <a href="https://www.google.com/maps?q=-27.287616729736328,-52.70440673828125&amp;z=17&amp;hl=pt-BR" class="btn btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
+          </div>
         </div>
         <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria da Cabana Fé">
           <div class="carousel-track">
@@ -864,7 +991,7 @@
     <div class="container">
       <div class="cabin-grid">
         <div class="cabin-copy reveal">
-          <div class="section-num">03 &middot; SEGUNDA CABANA</div>
+          <div class="section-num">CABANA PRÓPRIA</div>
           <h3>Cabana Amor</h3>
           <p class="lead">Pensada para encontros &mdash; do pedido de casamento à fuga romântica de fim de semana.</p>
           <ul>
@@ -874,7 +1001,10 @@
             <li>Decoração romântica opcional</li>
             <li>Espumante e janta sob encomenda</li>
           </ul>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20a%20Cabana%20Amor." class="btn btn-gold" target="_blank" rel="noopener">Reservar Cabana Amor</a>
+          <div class="cabin-actions">
+            <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20a%20Cabana%20Amor." class="btn btn-gold" target="_blank" rel="noopener">Reservar Cabana Amor</a>
+            <a href="https://www.google.com/maps?q=-27.287616729736328,-52.70440673828125&amp;z=17&amp;hl=pt-BR" class="btn btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
+          </div>
         </div>
         <div class="carousel reveal" data-carousel data-interval="5500" aria-label="Galeria da Cabana Amor">
           <div class="carousel-track">
@@ -907,11 +1037,120 @@
     </div>
   </section>
 
+  <!-- CABANA PARCEIRA · REFÚGIO ÁGUAS DO GOIO-ÊN -->
+  <section class="cabin">
+    <div class="container">
+      <div class="cabin-grid">
+        <div class="cabin-copy reveal">
+          <div class="section-num">CABANA PARCEIRA &middot; 2026</div>
+          <h3>Refúgio Águas<br/>do Goio-Ên</h3>
+          <p class="lead">Uma de nossas cabanas parceiras &mdash; natureza, água e silêncio para um descanso de verdade a dois.</p>
+          <ul>
+            <li>Cabana parceira do Mirante</li>
+            <li>Ambiente cercado pela natureza</li>
+            <li>Café da manhã incluso</li>
+            <li>Perfeita para casais</li>
+            <li>Clima de refúgio e tranquilidade</li>
+          </ul>
+          <div class="cabin-price">
+            <div class="price-item">
+              <span class="price-label">Domingo a quinta</span>
+              <span class="price-value">R$ 800<small>diária &middot; café incluso</small></span>
+            </div>
+            <div class="price-item">
+              <span class="price-label">Sexta e sábado</span>
+              <span class="price-value">R$ 1.300<small>diária &middot; café incluso</small></span>
+            </div>
+          </div>
+          <div class="cabin-actions">
+            <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20o%20Refúgio%20Águas%20do%20Goio-Ên." class="btn btn-gold" target="_blank" rel="noopener">Reservar Refúgio</a>
+          </div>
+        </div>
+        <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria do Refúgio Águas do Goio-Ên">
+          <div class="carousel-track">
+            <div class="carousel-slide active"><img src="assets/imagens/REFÚGIO CARROSSEL 1.jpeg" alt="Refúgio Águas do Goio-Ên — foto 1" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 2.jpeg" alt="Refúgio Águas do Goio-Ên — foto 2" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 3.jpeg" alt="Refúgio Águas do Goio-Ên — foto 3" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 4.jpeg" alt="Refúgio Águas do Goio-Ên — foto 4" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 5.jpeg" alt="Refúgio Águas do Goio-Ên — foto 5" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 6.jpeg" alt="Refúgio Águas do Goio-Ên — foto 6" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 7.jpeg" alt="Refúgio Águas do Goio-Ên — foto 7" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 8.jpeg" alt="Refúgio Águas do Goio-Ên — foto 8" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 9.jpeg" alt="Refúgio Águas do Goio-Ên — foto 9" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 10.jpeg" alt="Refúgio Águas do Goio-Ên — foto 10" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 11.jpeg" alt="Refúgio Águas do Goio-Ên — foto 11" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 12.jpeg" alt="Refúgio Águas do Goio-Ên — foto 12" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 13.jpeg" alt="Refúgio Águas do Goio-Ên — foto 13" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 14.jpeg" alt="Refúgio Águas do Goio-Ên — foto 14" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 15.jpeg" alt="Refúgio Águas do Goio-Ên — foto 15" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 16.jpeg" alt="Refúgio Águas do Goio-Ên — foto 16" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 17.jpeg" alt="Refúgio Águas do Goio-Ên — foto 17" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 18.jpeg" alt="Refúgio Águas do Goio-Ên — foto 18" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 19.jpeg" alt="Refúgio Águas do Goio-Ên — foto 19" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 20.jpeg" alt="Refúgio Águas do Goio-Ên — foto 20" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 21.jpeg" alt="Refúgio Águas do Goio-Ên — foto 21" loading="lazy" /></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
+          <div class="carousel-counter"><span class="cur">1</span> / <span class="tot">21</span></div>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+
+      <!-- Vídeos Refúgio -->
+      <div class="reveal" style="margin-top:90px; text-align:center;">
+        <div class="section-num" style="color: var(--gold);">VÍDEOS</div>
+        <h3 style="font-family: var(--font-display); font-weight:500; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.08em; margin-bottom:10px;">O Refúgio em movimento</h3>
+        <p style="font-style: italic; opacity: 0.88; max-width: 46ch; margin: 0 auto;">Veja a cabana, a natureza e o clima que aguardam vocês.</p>
+      </div>
+      <div class="video-gallery reveal">
+        <div class="video-block">
+          <video src="assets/videos/REFUGIO VIDEO 1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="video-block">
+          <video src="assets/videos/REFUGIO VIDEO 2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="video-block">
+          <video src="assets/videos/REFUGIO VIDEO 3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CABANA PARCEIRA · BANGALÔ DONA MARIA -->
+  <section class="cabin light reverse">
+    <div class="container">
+      <div class="cabin-grid">
+        <div class="cabin-copy reveal">
+          <div class="section-num">CABANA PARCEIRA &middot; 2026</div>
+          <h3>Bangalô<br/>Dona Maria</h3>
+          <p class="lead">Mais uma cabana parceira que passa a fazer parte da nossa história em 2026 &mdash; com o mesmo cuidado de sempre em receber bem.</p>
+          <ul>
+            <li>Cabana parceira do Mirante</li>
+            <li>Refúgio aconchegante para casais</li>
+            <li>Fotos e detalhes em breve</li>
+          </ul>
+          <div class="cabin-actions">
+            <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Bangalô%20Dona%20Maria." class="btn btn-gold" target="_blank" rel="noopener">Falar sobre o Bangalô</a>
+            <a href="https://www.google.com/maps?q=-27.29277801513672,-52.68484878540039&amp;z=17&amp;hl=pt-BR" class="btn btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="coming-soon">
+            <div class="cs-mark">&#10049;</div>
+            <div class="cs-title">Fotos em breve</div>
+            <p class="cs-text">Estamos preparando as imagens do Bangalô Dona Maria. Em breve, novidades por aqui.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- AMENITIES / SOBRE NÓS -->
   <section class="amenities">
     <div class="container">
       <div class="section-head reveal">
-        <div class="section-num">04 &middot; A EXPERIÊNCIA</div>
+        <div class="section-num">03 &middot; A EXPERIÊNCIA</div>
         <h2 class="section-title">Detalhes da Hospedagem</h2>
         <span class="section-rule"></span>
       </div>
@@ -972,10 +1211,12 @@
   <section class="packages" id="pacotes">
     <div class="container">
       <div class="section-head reveal">
-        <div class="section-num">05 &middot; DIÁRIAS &amp; PLANOS</div>
+        <div class="section-num">04 &middot; DIÁRIAS &amp; PLANOS</div>
         <h2 class="section-title">Escolha o seu refúgio</h2>
         <span class="section-rule"></span>
       </div>
+
+      <div class="pkg-group-label reveal">Cabana Amor &amp; Cabana Fé<span>Nossas cabanas próprias, no Mirante</span></div>
 
       <div class="packages-grid">
         <div class="package reveal">
@@ -1007,6 +1248,24 @@
         </div>
       </div>
 
+      <div class="pkg-group-label second reveal">Refúgio Águas do Goio-Ên<span>Nossa cabana parceira &middot; café da manhã incluso</span></div>
+
+      <div class="packages-grid">
+        <div class="package reveal">
+          <h4>Durante a semana</h4>
+          <p>Diária romântica na cabana + café da manhã. <em>De domingo a quinta-feira.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 800</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Refúgio%20Águas%20do%20Goio-Ên%20durante%20a%20semana%20(R$%20800)." class="btn" target="_blank" rel="noopener">Reservar</a>
+        </div>
+
+        <div class="package reveal">
+          <h4>Fim de semana</h4>
+          <p>Diária romântica na cabana + café da manhã. <em>Sexta e sábado.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 1.300</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Refúgio%20Águas%20do%20Goio-Ên%20no%20fim%20de%20semana%20(R$%201.300)." class="btn btn-gold" target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </div>
+
       <p style="text-align:center; margin-top: 60px; font-style: italic; opacity:0.75; max-width: 60ch; margin-left:auto; margin-right:auto;">Dúvidas sobre diárias, pacotes e disponibilidade? Fale diretamente com a Patrícia pelo WhatsApp.</p>
     </div>
   </section>
@@ -1030,6 +1289,11 @@
         <p>Check-in &middot; 14h</p>
         <p>Check-out &middot; 11h</p>
         <p style="margin-top:10px;">50% adiantado &middot; até 5x</p>
+      </div>
+      <div class="footer-block">
+        <h5>LOCALIZAÇÃO</h5>
+        <a href="https://www.google.com/maps?q=-27.287616729736328,-52.70440673828125&amp;z=17&amp;hl=pt-BR" target="_blank" rel="noopener">Mirante &middot; Cabana Amor &amp; Fé</a>
+        <a href="https://www.google.com/maps?q=-27.29277801513672,-52.68484878540039&amp;z=17&amp;hl=pt-BR" target="_blank" rel="noopener">Bangalô Dona Maria</a>
       </div>
     </div>
     <div class="footer-bottom">
