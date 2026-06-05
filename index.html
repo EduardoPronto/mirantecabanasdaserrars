@@ -862,6 +862,65 @@
       margin-top: 8px;
     }
 
+    /* ---------- Restaurant (seção isolada) ---------- */
+    .restaurant { background: var(--bg); color: var(--ink); }
+    .restaurant .section-num { color: var(--gold-deep); }
+    .restaurant-lead {
+      text-align: center;
+      max-width: 64ch;
+      margin: 0 auto 60px;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .menu-card {
+      background: var(--bg);
+      padding: 34px 30px;
+      transition: background 0.4s ease, transform 0.4s ease;
+    }
+    .menu-card:hover { background: var(--bg-soft); }
+    .menu-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.12em;
+      color: var(--gold-deep);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .menu-card p {
+      font-size: 1.02rem;
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+    @media (max-width: 900px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .menu-grid { grid-template-columns: 1fr; } }
+
+    .restaurant-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 56px;
+    }
+    .restaurant .btn-ghost { color: var(--ink); }
+    .restaurant .btn-ghost:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .restaurant-note {
+      text-align: center;
+      margin-top: 26px;
+      font-style: italic;
+      opacity: 0.7;
+      font-size: 1rem;
+    }
+
     /* ---------- Reveal on scroll ---------- */
     .reveal {
       opacity: 0;
@@ -892,6 +951,7 @@
     <nav class="nav">
       <a href="#quem-somos">Quem Somos</a>
       <a href="#acomodacoes">Acomodações</a>
+      <a href="#restaurante">Restaurante</a>
       <a href="#pacotes">Pacotes</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -1047,9 +1107,9 @@
           <p class="lead">Uma de nossas cabanas parceiras &mdash; natureza, água e silêncio para um descanso de verdade a dois.</p>
           <ul>
             <li>Cabana parceira do Mirante</li>
+            <li>Para casais e famílias (até 6 pessoas)</li>
             <li>Ambiente cercado pela natureza</li>
             <li>Café da manhã incluso</li>
-            <li>Perfeita para casais</li>
             <li>Clima de refúgio e tranquilidade</li>
           </ul>
           <div class="cabin-price">
@@ -1128,19 +1188,71 @@
           <p class="lead">Mais uma cabana parceira que passa a fazer parte da nossa história em 2026 &mdash; com o mesmo cuidado de sempre em receber bem.</p>
           <ul>
             <li>Cabana parceira do Mirante</li>
-            <li>Refúgio aconchegante para casais</li>
-            <li>Fotos e detalhes em breve</li>
+            <li>Ideal para festas de aniversário personalizadas</li>
+            <li>Eventos corporativos e confraternizações</li>
+            <li>Mais que hospedagem: um espaço para celebrar</li>
+            <li>Café da manhã incluso</li>
           </ul>
+          <div class="cabin-price">
+            <div class="price-item">
+              <span class="price-label">Durante a semana</span>
+              <span class="price-value">R$ 500<small>diária &middot; café incluso</small></span>
+            </div>
+            <div class="price-item">
+              <span class="price-label">Fim de semana</span>
+              <span class="price-value">R$ 700<small>diária &middot; café incluso</small></span>
+            </div>
+          </div>
           <div class="cabin-actions">
-            <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Bangalô%20Dona%20Maria." class="btn btn-gold" target="_blank" rel="noopener">Falar sobre o Bangalô</a>
+            <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Bangalô%20Dona%20Maria." class="btn btn-gold" target="_blank" rel="noopener">Reservar Bangalô</a>
+            <a href="https://wa.me/554998077301?text=Olá!%20Gostaria%20de%20fazer%20um%20evento%20no%20Bangalô%20Dona%20Maria%20(aniversário/corporativo)." class="btn btn-ghost" target="_blank" rel="noopener">Fazer um evento</a>
           </div>
         </div>
-        <div class="reveal">
-          <div class="coming-soon">
-            <div class="cs-mark">&#10049;</div>
-            <div class="cs-title">Fotos em breve</div>
-            <p class="cs-text">Estamos preparando as imagens do Bangalô Dona Maria. Em breve, novidades por aqui.</p>
+        <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria do Bangalô Dona Maria">
+          <div class="carousel-track">
+            <div class="carousel-slide active"><img src="assets/imagens/MARIA1.jpeg" alt="Bangalô Dona Maria — foto 1" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA2.jpeg" alt="Bangalô Dona Maria — foto 2" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA3.jpeg" alt="Bangalô Dona Maria — foto 3" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA4.jpeg" alt="Bangalô Dona Maria — foto 4" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA5.jpeg" alt="Bangalô Dona Maria — foto 5" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA6.jpeg" alt="Bangalô Dona Maria — foto 6" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA7.jpeg" alt="Bangalô Dona Maria — foto 7" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA8.jpeg" alt="Bangalô Dona Maria — foto 8" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA9.jpeg" alt="Bangalô Dona Maria — foto 9" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA10.jpeg" alt="Bangalô Dona Maria — foto 10" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA11.jpeg" alt="Bangalô Dona Maria — foto 11" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA12.jpeg" alt="Bangalô Dona Maria — foto 12" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA13.jpeg" alt="Bangalô Dona Maria — foto 13" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA14.jpeg" alt="Bangalô Dona Maria — foto 14" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA15.jpeg" alt="Bangalô Dona Maria — foto 15" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA16.jpeg" alt="Bangalô Dona Maria — foto 16" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA17.jpeg" alt="Bangalô Dona Maria — foto 17" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA18.jpeg" alt="Bangalô Dona Maria — foto 18" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA19.jpeg" alt="Bangalô Dona Maria — foto 19" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA20.jpeg" alt="Bangalô Dona Maria — foto 20" loading="lazy" /></div>
           </div>
+          <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
+          <div class="carousel-counter"><span class="cur">1</span> / <span class="tot">20</span></div>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+
+      <!-- Vídeos Bangalô -->
+      <div class="reveal" style="margin-top:90px; text-align:center;">
+        <div class="section-num" style="color: var(--gold-deep);">VÍDEOS</div>
+        <h3 style="font-family: var(--font-display); font-weight:500; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.08em; margin-bottom:10px;">O Bangalô em movimento</h3>
+        <p style="font-style: italic; opacity: 0.88; max-width: 46ch; margin: 0 auto;">Conheça o espaço perfeito para a sua estadia ou celebração.</p>
+      </div>
+      <div class="video-gallery reveal">
+        <div class="video-block">
+          <video src="assets/videos/MARIAV1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="video-block">
+          <video src="assets/videos/MARIAV2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="video-block">
+          <video src="assets/videos/MARIAV3.mp4" autoplay muted loop playsinline preload="metadata"></video>
         </div>
       </div>
     </div>
@@ -1266,7 +1378,85 @@
         </div>
       </div>
 
+      <div class="pkg-group-label second reveal">Bangalô Dona Maria<span>Cabana parceira &middot; hospedagem e eventos &middot; café incluso</span></div>
+
+      <div class="packages-grid">
+        <div class="package reveal">
+          <h4>Durante a semana</h4>
+          <p>Diária na cabana + café da manhã. <em>Hospedagem para casais e famílias.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 500</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Bangalô%20Dona%20Maria%20durante%20a%20semana%20(R$%20500)." class="btn" target="_blank" rel="noopener">Reservar</a>
+        </div>
+
+        <div class="package reveal">
+          <h4>Fim de semana</h4>
+          <p>Diária na cabana + café da manhã. <em>Sexta e sábado.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 700</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Bangalô%20Dona%20Maria%20no%20fim%20de%20semana%20(R$%20700)." class="btn" target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </div>
+
       <p style="text-align:center; margin-top: 60px; font-style: italic; opacity:0.75; max-width: 60ch; margin-left:auto; margin-right:auto;">Dúvidas sobre diárias, pacotes e disponibilidade? Fale diretamente com a Patrícia pelo WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- ===================  RESTAURANTE (ISOLADO)  =================== -->
+  <!-- ============================================================= -->
+  <section class="restaurant" id="restaurante">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-num">O RESTAURANTE</div>
+        <h2 class="section-title">A melhor vista do<br/>Rio Uruguai</h2>
+        <span class="section-rule"></span>
+      </div>
+
+      <p class="restaurant-lead reveal">Onde tudo começou. Do café da manhã às pizzas, porções, burgers e o nosso famoso caldo de cana &mdash; uma cozinha completa para acompanhar a vista mais bonita da região.</p>
+
+      <div class="menu-grid">
+        <div class="menu-card reveal">
+          <h4>Café da Manhã</h4>
+          <p>Sucos de laranja e uva, café passado, leite, croissant, pães, pão de queijo, frios, frutas e donuts. Serve duas pessoas.</p>
+        </div>
+        <div class="menu-card reveal">
+          <h4>Pizzas Salgadas</h4>
+          <p>Margherita, Calabresa, Quatro Queijos, Strogonoff, Frango com Catupiry, Filé com Cheddar e muito mais. Pequena, média ou grande (2 a 4 sabores).</p>
+        </div>
+        <div class="menu-card reveal">
+          <h4>Pizzas Doces</h4>
+          <p>Choconana, Dois Amores, Ovomaltine, Confete, Amendoim e outras delícias para fechar a noite.</p>
+        </div>
+        <div class="menu-card reveal">
+          <h4>Burguers</h4>
+          <p>California Burguer, Duplo Queijo e outros, com molho da casa e mini porção de fritas.</p>
+        </div>
+        <div class="menu-card reveal">
+          <h4>Porções</h4>
+          <p>Bife acebolado, batata com cheddar e bacon, tilápia, anéis de cebola, polenta frita e muito mais.</p>
+        </div>
+        <div class="menu-card reveal">
+          <h4>Prato Feito</h4>
+          <p>Arroz, feijão e salada com a sua escolha: bife, bisteca, frango ou tilápia.</p>
+        </div>
+        <div class="menu-card reveal">
+          <h4>Pastéis</h4>
+          <p>Carne, frango com catupiry, pizza e doces como Romeu e Julieta, Nutella e brigadeiro.</p>
+        </div>
+        <div class="menu-card reveal">
+          <h4>Sucos &amp; Caldo de Cana</h4>
+          <p>Caldo de cana puro ou com limão, gengibre, abacaxi e hortelã, além de sucos naturais variados.</p>
+        </div>
+        <div class="menu-card reveal">
+          <h4>Açaís</h4>
+          <p>Monte o seu açaí com chocolates, frutas, gostosuras e diversos acompanhamentos.</p>
+        </div>
+      </div>
+
+      <div class="restaurant-cta reveal">
+        <a href="assets/imagens/Carda_pio_Mirante_Cabanas_da_Serra.pdf" target="_blank" rel="noopener" class="btn btn-gold">Ver cardápio completo (PDF)</a>
+        <a href="https://wa.me/554998077301?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20no%20restaurante%20do%20Mirante." class="btn btn-ghost" target="_blank" rel="noopener">Fazer um pedido</a>
+      </div>
+      <p class="restaurant-note reveal">Cardápio completo com todos os sabores, porções e valores no PDF.</p>
     </div>
   </section>
 
