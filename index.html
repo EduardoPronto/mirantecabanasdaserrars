@@ -101,10 +101,10 @@
 
     .nav {
       display: flex;
-      gap: 28px;
+      gap: 22px;
       font-family: var(--font-display);
       font-size: 11px;
-      letter-spacing: 0.28em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--bg);
       transition: color 0.3s ease;
@@ -121,7 +121,7 @@
     }
     .nav a:hover::after { transform: scaleX(1); }
     .site-header.scrolled .nav { color: var(--ink); }
-    @media (max-width: 820px) { .nav { display: none; } }
+    @media (max-width: 900px) { .nav { display: none; } }
 
     /* ---------- Hero ---------- */
     .hero {
@@ -844,11 +844,12 @@
     .pkg-group-label {
       text-align: center;
       font-family: var(--font-display);
-      font-size: 1.4rem;
-      letter-spacing: 0.2em;
+      font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+      letter-spacing: 0.08em;
+      line-height: 1.12;
       text-transform: uppercase;
       color: var(--gold);
-      margin: 0 0 34px;
+      margin: 0 0 30px;
     }
     .pkg-group-label.second { margin-top: 80px; }
     .pkg-group-label span {
@@ -921,6 +922,55 @@
       font-size: 1rem;
     }
 
+    /* ---------- Overview / resumo (primeira página) ---------- */
+    .overview { background: var(--bg-soft); }
+    .overview-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .overview-card {
+      flex: 1 1 280px;
+      max-width: 360px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 30px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+    }
+    .overview-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: var(--shadow-md); }
+    .ov-kicker { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-deep); }
+    .ov-title { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: 0.04em; color: var(--ink); line-height: 1.2; }
+    .ov-desc { font-size: 1.02rem; color: var(--muted); line-height: 1.5; flex-grow: 1; }
+    .ov-go { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-deep); margin-top: 6px; }
+
+    /* ---------- Cesta de piquenique (no restaurante) ---------- */
+    .picnic {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      margin-top: 60px;
+      padding: 34px 36px;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+    .picnic .ov-kicker { color: var(--gold-deep); }
+    .picnic h4 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      margin: 8px 0 8px;
+    }
+    .picnic p { color: var(--ink-soft); max-width: 52ch; }
+    .picnic .btn-ghost { color: var(--ink); white-space: nowrap; }
+    .picnic .btn-ghost:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
     /* ---------- Reveal on scroll ---------- */
     .reveal {
       opacity: 0;
@@ -951,6 +1001,7 @@
     <nav class="nav">
       <a href="#quem-somos">Quem Somos</a>
       <a href="#acomodacoes">Acomodações</a>
+      <a href="#passeio">Passeio</a>
       <a href="#restaurante">Restaurante</a>
       <a href="#pacotes">Pacotes</a>
       <a href="#contato">Contato</a>
@@ -970,6 +1021,49 @@
     <div class="scroll-cue">EXPLORE</div>
   </section>
 
+  <!-- OVERVIEW / RESUMO -->
+  <section class="overview" id="resumo">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-num">BEM-VINDOS</div>
+        <h2 class="section-title">Tudo o que você<br/>encontra aqui</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="overview-grid">
+        <a class="overview-card reveal" href="#restaurante">
+          <span class="ov-kicker">Sabores</span>
+          <span class="ov-title">Restaurante &amp; Cesta de Piquenique</span>
+          <span class="ov-desc">A melhor vista do Rio Uruguai, do café da manhã ao jantar.</span>
+          <span class="ov-go">Ver mais &rarr;</span>
+        </a>
+        <a class="overview-card reveal" href="#cabanas-mirante">
+          <span class="ov-kicker">Cabanas próprias</span>
+          <span class="ov-title">Cabanas Amor e Fé</span>
+          <span class="ov-desc">Refúgios românticos com hidromassagem e vista para a serra.</span>
+          <span class="ov-go">Ver mais &rarr;</span>
+        </a>
+        <a class="overview-card reveal" href="#bangalo">
+          <span class="ov-kicker">Cabana parceira</span>
+          <span class="ov-title">Bangalô Dona Maria</span>
+          <span class="ov-desc">Hospedagem e eventos: aniversários e confraternizações.</span>
+          <span class="ov-go">Ver mais &rarr;</span>
+        </a>
+        <a class="overview-card reveal" href="#refugio">
+          <span class="ov-kicker">Cabana parceira</span>
+          <span class="ov-title">Refúgio Águas do Goio-Ên</span>
+          <span class="ov-desc">Para casais e famílias, com espaço para celebrações.</span>
+          <span class="ov-go">Ver mais &rarr;</span>
+        </a>
+        <a class="overview-card reveal" href="#passeio">
+          <span class="ov-kicker">Experiência</span>
+          <span class="ov-title">Passeio Guiado Rota Olhos D'Água</span>
+          <span class="ov-desc">Um passeio guiado em meio à natureza da região.</span>
+          <span class="ov-go">Ver mais &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- QUEM SOMOS -->
   <section class="intro" id="quem-somos">
     <div class="container">
@@ -982,8 +1076,18 @@
         <p>Em 2026, demos um novo passo e abrimos as portas para as cabanas parceiras &mdash; o <strong>Bangalô Dona Maria</strong> e o <strong>Refúgio Águas do Goio-Ên</strong> &mdash;, ampliando o convite para que mais casais vivam momentos inesquecíveis em meio à natureza.</p>
         <p style="font-style:italic; color: var(--gold-deep);">Daquela primeira banca ao alto da serra, uma coisa nunca mudou: o prazer de receber bem. Já fomos cenário de muitos momentos especiais &mdash; inclusive pedidos de casamento.</p>
       </div>
-      <div class="intro-image reveal">
-        <img src="assets/imagens/cafe.png" alt="Café da manhã servido na cabana com vista para o Rio Uruguai" loading="lazy" />
+      <div class="carousel reveal" data-carousel data-interval="4500" aria-label="Galeria da hidromassagem">
+        <div class="carousel-track">
+            <div class="carousel-slide active"><img src="assets/imagens/jacuzzi.png" alt="Hidromassagem na cabana — foto 1" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/jacuzzi1.jpeg" alt="Hidromassagem na cabana — foto 2" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/jacuzzi2.jpeg" alt="Hidromassagem na cabana — foto 3" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/jacuzzi3.jpeg" alt="Hidromassagem na cabana — foto 4" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/jacuzzi4.png" alt="Hidromassagem na cabana — foto 5" loading="lazy" /></div>
+        </div>
+        <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
+        <div class="carousel-counter"><span class="cur">1</span> / <span class="tot">5</span></div>
+        <div class="carousel-dots"></div>
       </div>
     </div>
   </section>
@@ -1000,7 +1104,7 @@
   </section>
 
   <!-- CABANA FÉ -->
-  <section class="cabin">
+  <section class="cabin" id="cabanas-mirante">
     <div class="container">
       <div class="cabin-grid">
         <div class="cabin-copy reveal">
@@ -1017,6 +1121,7 @@
           </ul>
           <div class="cabin-actions">
             <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20a%20Cabana%20Fé." class="btn btn-gold" target="_blank" rel="noopener">Reservar Cabana Fé</a>
+            <a href="https://reservas.desbravador.com.br/hotel-app/mirante-cabanas-da-serra" class="btn btn-ghost" target="_blank" rel="noopener">Verificar disponibilidade</a>
             <a href="https://www.google.com/maps?q=-27.287616729736328,-52.70440673828125&amp;z=17&amp;hl=pt-BR" class="btn btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
           </div>
         </div>
@@ -1065,6 +1170,7 @@
           </ul>
           <div class="cabin-actions">
             <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20a%20Cabana%20Amor." class="btn btn-gold" target="_blank" rel="noopener">Reservar Cabana Amor</a>
+            <a href="https://reservas.desbravador.com.br/hotel-app/mirante-cabanas-da-serra" class="btn btn-ghost" target="_blank" rel="noopener">Verificar disponibilidade</a>
             <a href="https://www.google.com/maps?q=-27.287616729736328,-52.70440673828125&amp;z=17&amp;hl=pt-BR" class="btn btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
           </div>
         </div>
@@ -1100,19 +1206,18 @@
   </section>
 
   <!-- CABANA PARCEIRA · REFÚGIO ÁGUAS DO GOIO-ÊN -->
-  <section class="cabin">
+  <section class="cabin" id="refugio">
     <div class="container">
       <div class="cabin-grid">
         <div class="cabin-copy reveal">
           <div class="section-num">CABANA PARCEIRA &middot; 2026</div>
           <h3>Refúgio Águas<br/>do Goio-Ên</h3>
-          <p class="lead">Uma de nossas cabanas parceiras &mdash; natureza, água e silêncio para um descanso de verdade a dois.</p>
+          <p class="lead">Uma de nossas cabanas parceiras &mdash; natureza, água e silêncio para casais, famílias e também celebrações especiais.</p>
           <ul>
             <li>Cabana parceira do Mirante</li>
-            <li>Para casais e famílias (até 6 pessoas)</li>
-            <li>Ambiente cercado pela natureza</li>
+            <li>Hospedagem para casais e famílias (até 6 pessoas)</li>
+            <li>Aniversários, confraternizações e chá de bebê (até 30 pessoas)</li>
             <li>Café da manhã incluso</li>
-            <li>Clima de refúgio e tranquilidade</li>
             <li>Check-in 18h &middot; check-out 15h</li>
           </ul>
           <div class="cabin-price">
@@ -1127,6 +1232,7 @@
           </div>
           <div class="cabin-actions">
             <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20o%20Refúgio%20Águas%20do%20Goio-Ên." class="btn btn-gold" target="_blank" rel="noopener">Reservar Refúgio</a>
+            <a href="https://reservas.desbravador.com.br/hotel-app/mirante-cabanas-da-serra" class="btn btn-ghost" target="_blank" rel="noopener">Verificar disponibilidade</a>
             <a href="https://www.google.com/maps?q=-27.29277801513672,-52.68484878540039&amp;z=17&amp;hl=pt-BR" class="btn btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
           </div>
         </div>
@@ -1182,7 +1288,7 @@
   </section>
 
   <!-- CABANA PARCEIRA · BANGALÔ DONA MARIA -->
-  <section class="cabin light reverse">
+  <section class="cabin light reverse" id="bangalo">
     <div class="container">
       <div class="cabin-grid">
         <div class="cabin-copy reveal">
@@ -1209,6 +1315,7 @@
           </div>
           <div class="cabin-actions">
             <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Bangalô%20Dona%20Maria." class="btn btn-gold" target="_blank" rel="noopener">Reservar Bangalô</a>
+            <a href="https://reservas.desbravador.com.br/hotel-app/mirante-cabanas-da-serra" class="btn btn-ghost" target="_blank" rel="noopener">Verificar disponibilidade</a>
             <a href="https://wa.me/554998077301?text=Olá!%20Gostaria%20de%20fazer%20um%20evento%20no%20Bangalô%20Dona%20Maria%20(aniversário/corporativo)." class="btn btn-ghost" target="_blank" rel="noopener">Fazer um evento</a>
             <a href="https://www.google.com/maps/search/Bangallo%20Dona%20Maria/@-27.25182342529297,-52.71209716796875,17z?hl=pt-BR" class="btn btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
           </div>
@@ -1263,76 +1370,11 @@
     </div>
   </section>
 
-  <!-- AMENITIES / SOBRE NÓS -->
-  <section class="amenities">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-num">03 &middot; A EXPERIÊNCIA</div>
-        <h2 class="section-title">Detalhes da Hospedagem</h2>
-        <span class="section-rule"></span>
-      </div>
-
-      <div class="amenities-grid">
-        <div class="amenity-photo reveal">
-          <img src="assets/imagens/jacuzzi.png" alt="Hidromassagem para dois na cabana" loading="lazy" />
-          <div class="caption">Hidromassagem</div>
-        </div>
-        <div class="amenity-photo reveal">
-          <img src="assets/imagens/cafe.png" alt="Café da manhã servido com vista para o Rio Uruguai" loading="lazy" />
-          <div class="caption">Café da manhã</div>
-        </div>
-        <div class="amenity-photo reveal">
-          <img src="assets/imagens/lareira.png" alt="Lareira aconchegante" loading="lazy" />
-          <div class="caption">Lareira</div>
-        </div>
-        <div class="amenity-photo reveal">
-          <img src="assets/imagens/entrada.png" alt="Entrada das cabanas" loading="lazy" />
-          <div class="caption">A chegada</div>
-        </div>
-      </div>
-
-      <div class="features-grid reveal">
-        <div class="feature">
-          <div class="icon">&#10049;</div>
-          <div class="label">Próximo do Rio Uruguai</div>
-        </div>
-        <div class="feature">
-          <div class="icon">&#10049;</div>
-          <div class="label">Duas cabanas</div>
-        </div>
-        <div class="feature">
-          <div class="icon">&#10049;</div>
-          <div class="label">Hidromassagem</div>
-        </div>
-        <div class="feature">
-          <div class="icon">&#10049;</div>
-          <div class="label">Restaurante disponível</div>
-        </div>
-        <div class="feature">
-          <div class="icon">&#10049;</div>
-          <div class="label">Check-in 14h</div>
-        </div>
-        <div class="feature">
-          <div class="icon">&#10049;</div>
-          <div class="label">Check-out 11h</div>
-        </div>
-        <div class="feature">
-          <div class="icon">&#10049;</div>
-          <div class="label">Parcelamos em até 5x</div>
-        </div>
-        <div class="feature">
-          <div class="icon">&#10049;</div>
-          <div class="label">50% adiantado</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- PACOTES -->
   <section class="packages" id="pacotes">
     <div class="container">
       <div class="section-head reveal">
-        <div class="section-num">04 &middot; DIÁRIAS &amp; PLANOS</div>
+        <div class="section-num">03 &middot; DIÁRIAS &amp; PLANOS</div>
         <h2 class="section-title">Escolha o seu refúgio</h2>
         <span class="section-rule"></span>
       </div>
@@ -1340,6 +1382,20 @@
       <div class="pkg-group-label reveal">Cabana Amor &amp; Cabana Fé<span>Nossas cabanas próprias, no Mirante</span></div>
 
       <div class="packages-grid">
+        <div class="package reveal">
+          <h4>Durante a semana</h4>
+          <p>Diária na cabana + café da manhã. <em>De domingo a quinta-feira.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 500</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20na%20diária%20do%20Mirante%20durante%20a%20semana%20(R$%20500)." class="btn" target="_blank" rel="noopener">Reservar</a>
+        </div>
+
+        <div class="package reveal">
+          <h4>Fim de semana</h4>
+          <p>Diária na cabana + café da manhã. <em>Sexta e sábado.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 700</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20na%20diária%20do%20Mirante%20no%20fim%20de%20semana%20(R$%20700)." class="btn" target="_blank" rel="noopener">Reservar</a>
+        </div>
+
         <div class="package reveal">
           <h4>Pacote Básico</h4>
           <p>Diária romântica na cabana + café da manhã. <em>Refeição para duas pessoas.</em></p>
@@ -1420,7 +1476,8 @@
         <span class="section-rule"></span>
       </div>
 
-      <p class="restaurant-lead reveal">Onde tudo começou. Do café da manhã às pizzas, porções, burgers e o nosso famoso caldo de cana &mdash; uma cozinha completa para acompanhar a vista mais bonita da região.</p>
+      <p class="restaurant-lead reveal" style="margin-bottom:16px;">Onde tudo começou. Do café da manhã às pizzas, porções, burgers e o nosso famoso caldo de cana &mdash; uma cozinha completa para acompanhar a vista mais bonita da região.</p>
+      <p class="reveal" style="text-align:center; font-family: var(--font-display); letter-spacing:0.22em; font-size:12px; color: var(--gold-deep); margin:0 0 54px;">ATENDIMENTO TODOS OS DIAS &middot; 8H ÀS 22H</p>
 
       <div class="menu-grid">
         <div class="menu-card reveal">
@@ -1461,11 +1518,75 @@
         </div>
       </div>
 
+      <div class="picnic reveal">
+        <div>
+          <span class="ov-kicker">Para levar</span>
+          <h4>Cesta de Piquenique</h4>
+          <p>Monte um piquenique especial para aproveitar a vista do Rio Uruguai. Sob encomenda &mdash; fale com a gente para combinar os itens.</p>
+        </div>
+        <a href="https://wa.me/554998077301?text=Olá!%20Gostaria%20de%20encomendar%20uma%20cesta%20de%20piquenique." class="btn btn-ghost" target="_blank" rel="noopener">Pedir cesta de piquenique</a>
+      </div>
+
       <div class="restaurant-cta reveal">
         <a href="assets/imagens/Carda_pio_Mirante_Cabanas_da_Serra.pdf" target="_blank" rel="noopener" class="btn btn-gold">Ver cardápio completo (PDF)</a>
         <a href="https://menu.fu.do/cabanasdaserra" class="btn btn-ghost" target="_blank" rel="noopener">Fazer um pedido</a>
       </div>
       <p class="restaurant-note reveal">Cardápio completo com todos os sabores, porções e valores no PDF.</p>
+    </div>
+  </section>
+
+  <!-- PASSEIO GUIADO ROTA OLHOS D'ÁGUA -->
+  <section class="cabin" id="passeio">
+    <div class="container">
+      <div class="cabin-grid">
+        <div class="cabin-copy reveal">
+          <div class="section-num">EXPERIÊNCIA</div>
+          <h3>Passeio Guiado<br/>Rota Olhos D&#39;Água</h3>
+          <p class="lead">Um passeio guiado para explorar as paisagens e a natureza da região &mdash; o complemento perfeito para a sua estadia.</p>
+          <ul>
+            <li>Passeio guiado pela Rota Olhos D&#39;Água</li>
+            <li>Paisagens e natureza da região</li>
+            <li>Ideal para complementar a hospedagem</li>
+          </ul>
+          <div class="cabin-actions">
+            <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Passeio%20Guiado%20Rota%20Olhos%20D%27Água." class="btn btn-gold" target="_blank" rel="noopener">Falar sobre o passeio</a>
+          </div>
+        </div>
+        <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria do Passeio Rota Olhos D&#39;Água">
+          <div class="carousel-track">
+            <div class="carousel-slide active"><img src="assets/imagens/PASSEIO.jpeg" alt="Passeio Rota Olhos D&#39;Água — foto 1" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/PASSEIO1.jpeg" alt="Passeio Rota Olhos D&#39;Água — foto 2" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/PASSEIO2.jpeg" alt="Passeio Rota Olhos D&#39;Água — foto 3" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/PASSEIO3.jpeg" alt="Passeio Rota Olhos D&#39;Água — foto 4" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/PASSEIO4.jpeg" alt="Passeio Rota Olhos D&#39;Água — foto 5" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/PASSEIO5.jpeg" alt="Passeio Rota Olhos D&#39;Água — foto 6" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/PASSEIO6.jpeg" alt="Passeio Rota Olhos D&#39;Água — foto 7" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/PASSEIO7.jpeg" alt="Passeio Rota Olhos D&#39;Água — foto 8" loading="lazy" /></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
+          <div class="carousel-counter"><span class="cur">1</span> / <span class="tot">8</span></div>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+
+      <!-- Vídeos Passeio -->
+      <div class="reveal" style="margin-top:90px; text-align:center;">
+        <div class="section-num" style="color: var(--gold);">VÍDEOS</div>
+        <h3 style="font-family: var(--font-display); font-weight:500; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.08em; margin-bottom:10px;">O passeio em movimento</h3>
+        <p style="font-style: italic; opacity: 0.88; max-width: 46ch; margin: 0 auto;">Veja um pouco da experiência da Rota Olhos D&#39;Água.</p>
+      </div>
+      <div class="video-gallery reveal">
+        <div class="video-block">
+          <video src="assets/videos/PASSEIOVID1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="video-block">
+          <video src="assets/videos/PASSEIOVID2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="video-block">
+          <video src="assets/videos/PASSEIOVID3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1485,9 +1606,12 @@
       </div>
       <div class="footer-block">
         <h5>HORÁRIOS</h5>
-        <p>Check-in &middot; 14h</p>
-        <p>Check-out &middot; 11h</p>
-        <p style="margin-top:10px;">50% adiantado &middot; até 5x</p>
+        <p style="font-size:0.82rem; opacity:0.65; margin-bottom:6px;">Check-in / check-out</p>
+        <p>Mirante &middot; 14h às 11h</p>
+        <p>Bangalô &middot; 16h às 14h</p>
+        <p>Refúgio &middot; 18h às 15h</p>
+        <p style="margin-top:12px;">Restaurante &middot; 8h às 22h</p>
+        <p style="margin-top:12px;">Sinal de 50% para reserva</p>
       </div>
       <div class="footer-block">
         <h5>LOCALIZAÇÃO</h5>
