@@ -971,6 +971,10 @@
     .picnic .btn-ghost { color: var(--ink); white-space: nowrap; }
     .picnic .btn-ghost:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
+    /* ---------- Carrossel widescreen (restaurante) ---------- */
+    .carousel.wide { aspect-ratio: 16 / 9; width: 100%; }
+    @media (max-width: 640px) { .carousel.wide { aspect-ratio: 4 / 3; } }
+
     /* ---------- Reveal on scroll ---------- */
     .reveal {
       opacity: 0;
@@ -1127,13 +1131,34 @@
         </div>
         <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria da Cabana Fé">
           <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/fe.png" alt="Cabana Fé — vista interna 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/fe1.png" alt="Cabana Fé — vista interna 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/fe2.png" alt="Cabana Fé — vista interna 3" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/FE1.jpeg" alt="Cabana Fé — foto 1" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE2.jpeg" alt="Cabana Fé — foto 2" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE3.jpeg" alt="Cabana Fé — foto 3" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE4.jpeg" alt="Cabana Fé — foto 4" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE5.jpeg" alt="Cabana Fé — foto 5" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE6.jpeg" alt="Cabana Fé — foto 6" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE7.jpeg" alt="Cabana Fé — foto 7" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE8.jpeg" alt="Cabana Fé — foto 8" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE9.jpeg" alt="Cabana Fé — foto 9" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE10.jpeg" alt="Cabana Fé — foto 10" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE11.jpeg" alt="Cabana Fé — foto 11" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE12.jpeg" alt="Cabana Fé — foto 12" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE13.jpeg" alt="Cabana Fé — foto 13" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE14.jpeg" alt="Cabana Fé — foto 14" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE15.jpeg" alt="Cabana Fé — foto 15" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE16.jpeg" alt="Cabana Fé — foto 16" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE17.jpeg" alt="Cabana Fé — foto 17" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE18.jpeg" alt="Cabana Fé — foto 18" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE19.jpeg" alt="Cabana Fé — foto 19" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE20.jpeg" alt="Cabana Fé — foto 20" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE21.jpeg" alt="Cabana Fé — foto 21" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE22.jpeg" alt="Cabana Fé — foto 22" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE23.jpeg" alt="Cabana Fé — foto 23" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE24.jpeg" alt="Cabana Fé — foto 24" loading="lazy" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
           <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
-          <div class="carousel-counter"><span class="cur">1</span> / <span class="tot">3</span></div>
+          <div class="carousel-counter"><span class="cur">1</span> / <span class="tot">24</span></div>
           <div class="carousel-dots"></div>
         </div>
       </div>
@@ -1476,6 +1501,22 @@
 
       <p class="restaurant-lead reveal" style="margin-bottom:16px;">Onde tudo começou. Do café da manhã às pizzas, porções, burgers e o nosso famoso caldo de cana &mdash; uma cozinha completa para acompanhar a vista mais bonita da região.</p>
       <p class="reveal" style="text-align:center; font-family: var(--font-display); letter-spacing:0.22em; font-size:12px; color: var(--gold-deep); margin:0 0 54px;">ATENDIMENTO TODOS OS DIAS &middot; 8H ÀS 22H</p>
+
+      <div class="carousel wide reveal" data-carousel data-interval="5000" aria-label="Galeria do restaurante" style="margin-bottom:64px;">
+        <div class="carousel-track">
+          <div class="carousel-slide active"><img src="assets/imagens/REST1.jpeg" alt="Restaurante Mirante — foto 1" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/imagens/REST2.jpeg" alt="Restaurante Mirante — foto 2" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/imagens/REST3.jpeg" alt="Restaurante Mirante — foto 3" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/imagens/REST4.jpeg" alt="Restaurante Mirante — foto 4" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/imagens/REST5.jpeg" alt="Restaurante Mirante — foto 5" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/imagens/REST6.jpeg" alt="Restaurante Mirante — foto 6" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/imagens/REST7.jpeg" alt="Restaurante Mirante — foto 7" loading="lazy" /></div>
+        </div>
+        <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
+        <div class="carousel-counter"><span class="cur">1</span> / <span class="tot">7</span></div>
+        <div class="carousel-dots"></div>
+      </div>
 
       <div class="menu-grid">
         <div class="menu-card reveal">
