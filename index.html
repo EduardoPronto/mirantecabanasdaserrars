@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mirante Cabanas da Serra — Refúgio romântico com vista para o Rio Uruguai. Duas cabanas exclusivas, hidromassagem, café da manhã na cabana e o restaurante com a melhor vista da região." />
+  <meta name="description" content="Mirante Cabanas da Serra: refúgio romântico com vista para o Rio Uruguai. Cabanas com hidromassagem, café da manhã e o restaurante com a melhor vista da região." />
   <meta name="theme-color" content="#1a1410" />
   <title>Mirante Cabanas da Serra · Refúgio com vista para o Rio Uruguai</title>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Mirante Cabanas da Serra" />
   <meta property="og:description" content="Refúgio romântico com vista para o Rio Uruguai. Conforto, silêncio e intimidade." />
-  <meta property="og:image" content="assets/imagens/cafe2.png" />
+  <meta property="og:image" content="assets/imagens/cafe2.jpg" />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -139,7 +139,7 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('assets/imagens/cafe2.png') center/cover no-repeat;
+      background: url('assets/imagens/cafe2.jpg') center/cover no-repeat;
       transform: scale(1.05);
       animation: heroZoom 18s ease-in-out infinite alternate;
       z-index: 0;
@@ -806,6 +806,11 @@
     @media (max-width: 760px) {
       .video-gallery { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; }
     }
+    /* no celular o video da cabana vai em cima do texto, nao espremido ao lado */
+    @media (max-width: 760px) {
+      .cabin-video-row { grid-template-columns: 1fr !important; gap: 30px !important; }
+      .cabin-video-row .video-block { width: 100%; max-width: 360px; margin: 0 auto; }
+    }
 
     .coming-soon {
       width: 100%;
@@ -1007,7 +1012,7 @@
       <a href="#acomodacoes">Acomodações</a>
       <a href="#passeio">Passeio</a>
       <a href="#restaurante">Restaurante</a>
-      <a href="#pacotes">Pacotes</a>
+      <a href="#pacotes">Diárias</a>
       <a href="#contato">Contato</a>
     </nav>
   </header>
@@ -1018,7 +1023,7 @@
       <img src="assets/imagens/logo.png" alt="Mirante Cabanas da Serra" class="hero-logo" />
       <p class="hero-tagline">Um refúgio com vista para o Rio Uruguai &middot; Diárias &amp; planos românticos</p>
       <div class="hero-cta">
-        <a href="#pacotes" class="btn">Ver pacotes</a>
+        <a href="#pacotes" class="btn">Ver diárias</a>
         <a href="https://wa.me/554998077301?text=Olá!%20Vim%20pelo%20site%20do%20Mirante%20Cabanas%20da%20Serra%20e%20gostaria%20de%20mais%20informações." class="btn btn-gold" target="_blank" rel="noopener">Reservar agora</a>
       </div>
     </div>
@@ -1042,7 +1047,7 @@
         </a>
         <a class="overview-card reveal" href="#cabanas-mirante">
           <span class="ov-kicker">Cabanas próprias</span>
-          <span class="ov-title">Cabanas Amor e Fé</span>
+          <span class="ov-title">Cabanas Amor, Fé e Esperança</span>
           <span class="ov-desc">Refúgios românticos com hidromassagem e vista para a serra.</span>
           <span class="ov-go">Ver mais &rarr;</span>
         </a>
@@ -1076,17 +1081,17 @@
         <h2 class="section-title" style="text-align:left;">Da beira da estrada ao alto da serra</h2>
         <span class="section-rule" style="margin-left:0;"></span>
         <p style="margin-top:30px;">Tudo começou simples: uma banca de frutas à beira da BR. Logo veio o caldo de cana geladinho e o pastel quentinho, feitos com carinho para quem passava e parava &mdash; nem que fosse por um instante.</p>
-        <p>Com o passar dos anos, fomos cuidando de cada detalhe, melhorando e ampliando, sempre com o mesmo desejo de bem receber. Foi assim que nasceu o Mirante &mdash; hoje, ao mesmo tempo, o restaurante com a melhor vista do Rio Uruguai e o lar de duas cabanas próprias: a <strong>Cabana Amor</strong> e a <strong>Cabana Fé</strong>.</p>
+        <p>Com o passar dos anos, fomos cuidando de cada detalhe, melhorando e ampliando, sempre com o mesmo desejo de bem receber. Foi assim que nasceu o Mirante: hoje, ao mesmo tempo, o restaurante com a melhor vista do Rio Uruguai e o lar das nossas cabanas próprias: a <strong>Cabana Amor</strong>, a <strong>Cabana Fé</strong> e a <strong>Tiny House Esperança</strong>, a mais nova da família.</p>
         <p>Em 2026, demos um novo passo e abrimos as portas para as cabanas parceiras &mdash; o <strong>Bangalô Dona Maria</strong> e o <strong>Refúgio Águas do Goio-Ên</strong> &mdash;, ampliando o convite para que mais casais vivam momentos inesquecíveis em meio à natureza.</p>
         <p style="font-style:italic; color: var(--gold-deep);">Daquela primeira banca ao alto da serra, uma coisa nunca mudou: o prazer de receber bem. Já fomos cenário de muitos momentos especiais &mdash; inclusive pedidos de casamento.</p>
       </div>
       <div class="carousel reveal" data-carousel data-interval="4500" aria-label="Galeria da hidromassagem">
         <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/jacuzzi.png" alt="Hidromassagem na cabana — foto 1" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/jacuzzi.jpg" alt="Hidromassagem na cabana — foto 1" loading="lazy" /></div>
             <div class="carousel-slide"><img src="assets/imagens/jacuzzi1.jpeg" alt="Hidromassagem na cabana — foto 2" loading="lazy" /></div>
             <div class="carousel-slide"><img src="assets/imagens/jacuzzi2.jpeg" alt="Hidromassagem na cabana — foto 3" loading="lazy" /></div>
             <div class="carousel-slide"><img src="assets/imagens/jacuzzi3.jpeg" alt="Hidromassagem na cabana — foto 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/jacuzzi4.png" alt="Hidromassagem na cabana — foto 5" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/jacuzzi4.jpg" alt="Hidromassagem na cabana — foto 5" loading="lazy" /></div>
         </div>
         <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
         <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1117,7 +1122,8 @@
           <p class="lead">Um espaço de quietude e luz natural, onde a vista da serra se torna parte da estadia.</p>
           <ul>
             <li>Vista privilegiada para o Rio Uruguai</li>
-            <li>Hidromassagem para duas pessoas</li>
+            <li>Jacuzzi externa, coberta e aquecida, exclusiva da Cabana Fé</li>
+            <li>Recebe até 4 pessoas (2 camas de casal)</li>
             <li>Café da manhã servido na cabana</li>
             <li>Decoração romântica opcional</li>
             <li>A 50&nbsp;metros do restaurante</li>
@@ -1166,7 +1172,7 @@
       <!-- Video Fé -->
       <div style="margin-top:90px; display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:center;" class="cabin-video-row">
         <div class="video-block reveal">
-          <video src="assets/videos/fe.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/fe.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="reveal">
           <div class="section-num">VÍDEO</div>
@@ -1184,10 +1190,10 @@
         <div class="cabin-copy reveal">
           <div class="section-num">CABANA PRÓPRIA</div>
           <h3>Cabana Amor</h3>
-          <p class="lead">Pensada para encontros &mdash; do pedido de casamento à fuga romântica de fim de semana.</p>
+          <p class="lead">Pensada para encontros: do pedido de casamento à fuga romântica de fim de semana.</p>
           <ul>
             <li>Ambiente íntimo e aconchegante</li>
-            <li>Hidromassagem para duas pessoas</li>
+            <li>Hidromassagem interna para duas pessoas</li>
             <li>Lareira para os dias mais frios</li>
             <li>Decoração romântica opcional</li>
             <li>Espumante e janta sob encomenda</li>
@@ -1201,13 +1207,13 @@
         </div>
         <div class="carousel reveal" data-carousel data-interval="5500" aria-label="Galeria da Cabana Amor">
           <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/amor.png" alt="Cabana Amor — vista 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/amor1.png" alt="Cabana Amor — vista 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/amor2.png" alt="Cabana Amor — vista 3" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/amor3.png" alt="Cabana Amor — vista 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/amor4.png" alt="Cabana Amor — vista 5" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/amor5.png" alt="Cabana Amor — vista 6" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/amor6.png" alt="Cabana Amor — vista 7" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/amor.jpg" alt="Cabana Amor — vista 1" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/amor1.jpg" alt="Cabana Amor — vista 2" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/amor2.jpg" alt="Cabana Amor — vista 3" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/amor3.jpg" alt="Cabana Amor — vista 4" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/amor4.jpg" alt="Cabana Amor — vista 5" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/amor5.jpg" alt="Cabana Amor — vista 6" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/amor6.jpg" alt="Cabana Amor — vista 7" loading="lazy" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
           <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1224,37 +1230,92 @@
           <p style="font-style: italic; opacity: 0.88; max-width: 42ch;">Veja a luz, o ambiente e o clima que aguardam vocês na sua estadia.</p>
         </div>
         <div class="video-block reveal">
-          <video src="assets/videos/amor.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/amor.mp4" muted loop playsinline preload="none"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TINY HOUSE ESPERANÇA (nova, 10/2026) -->
+  <section class="cabin" id="esperanca">
+    <div class="container">
+      <div class="cabin-grid">
+        <div class="cabin-copy reveal">
+          <div class="section-num">CABANA PRÓPRIA &middot; NOVIDADE</div>
+          <h3>Tiny House<br/>Esperança</h3>
+          <p class="lead">A mais nova do Mirante: pequena, retirada e com o rio inteiro na janela.</p>
+          <ul>
+            <li>Hidromassagem dentro da cabana, ao lado da cama</li>
+            <li>Deck com vista para o Rio Uruguai</li>
+            <li>Cozinha completa</li>
+            <li>Roupão e secador de cabelo</li>
+            <li>Café da manhã incluso</li>
+            <li>Check-in 14h &middot; check-out 11h</li>
+          </ul>
+          <div class="cabin-actions">
+            <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20a%20Tiny%20House%20Esperança." class="btn btn-gold" target="_blank" rel="noopener">Reservar Tiny House Esperança</a>
+          </div>
+        </div>
+        <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria da Tiny House Esperança">
+          <div class="carousel-track">
+            <div class="carousel-slide active"><img src="assets/imagens/ESPERANCA1.jpeg" alt="Tiny House Esperança, foto 1" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA2.jpeg" alt="Tiny House Esperança, foto 2" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA3.jpeg" alt="Tiny House Esperança, foto 3" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA4.jpeg" alt="Tiny House Esperança, foto 4" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA5.jpeg" alt="Tiny House Esperança, foto 5" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA6.jpeg" alt="Tiny House Esperança, foto 6" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA7.jpeg" alt="Tiny House Esperança, foto 7" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA8.jpeg" alt="Tiny House Esperança, foto 8" loading="lazy" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA9.jpeg" alt="Tiny House Esperança, foto 9" loading="lazy" /></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
+          <div class="carousel-counter"><span class="cur">1</span> / <span class="tot">9</span></div>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+
+      <!-- Video Esperança -->
+      <div style="margin-top:90px; display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:center;" class="cabin-video-row">
+        <div class="video-block reveal">
+          <video data-src="assets/videos/esperanca.mp4" muted loop playsinline preload="none"></video>
+        </div>
+        <div class="reveal">
+          <div class="section-num">VÍDEO</div>
+          <h3 style="font-family: var(--font-display); font-weight:500; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.08em; margin-bottom:18px;">A Tiny House Esperança por dentro</h3>
+          <p style="font-style: italic; opacity: 0.88; max-width: 42ch;">A hidromassagem, a cozinha e a vista que esperam por vocês.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CABANA PARCEIRA · REFÚGIO ÁGUAS DO GOIO-ÊN -->
-  <section class="cabin" id="refugio">
+  <section class="cabin light reverse" id="refugio">
     <div class="container">
       <div class="cabin-grid">
         <div class="cabin-copy reveal">
           <div class="section-num">CABANA PARCEIRA &middot; 2026</div>
           <h3>Refúgio Águas<br/>do Goio-Ên</h3>
-          <p class="lead">Uma de nossas cabanas parceiras &mdash; natureza, água e silêncio para casais, famílias e também celebrações especiais.</p>
+          <p class="lead">Uma de nossas cabanas parceiras: natureza, água e silêncio para casais, famílias e também celebrações especiais.</p>
           <ul>
             <li>Cabana parceira do Mirante</li>
             <li>Hospedagem para casais e famílias (até 6 pessoas)</li>
             <li>Aniversários, confraternizações e chá de bebê (até 30 pessoas)</li>
-            <li>Café da manhã incluso</li>
+            <li>Hidromassagem</li>
+            <li>Café da manhã à parte: cesta por R$ 150 o casal</li>
             <li>Check-in 18h &middot; check-out 15h</li>
           </ul>
           <div class="cabin-price">
             <div class="price-item">
-              <span class="price-label">Domingo a quinta</span>
-              <span class="price-value">R$ 600<small>diária &middot; café incluso</small></span>
+              <span class="price-label">Segunda a quinta</span>
+              <span class="price-value">R$ 800<small>diária do casal &middot; sem café</small></span>
             </div>
             <div class="price-item">
-              <span class="price-label">Sexta e sábado</span>
-              <span class="price-value">R$ 800<small>diária &middot; café incluso</small></span>
+              <span class="price-label">Sexta, sábado e domingo</span>
+              <span class="price-value">R$ 1.200<small>diária do casal &middot; sem café</small></span>
             </div>
           </div>
+          <p style="font-size:0.85rem; opacity:0.8; margin-top:-10px; margin-bottom:24px;">Mais R$ 100 de taxa de limpeza e R$ 50 por pessoa a mais, por diária.</p>
           <div class="cabin-actions">
             <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20em%20reservar%20o%20Refúgio%20Águas%20do%20Goio-Ên." class="btn btn-gold" target="_blank" rel="noopener">Reservar Refúgio</a>
             <a href="https://www.google.com/maps?q=-27.29277801513672,-52.68484878540039&amp;z=17&amp;hl=pt-BR" class="btn btn-ghost" target="_blank" rel="noopener">Ver no mapa</a>
@@ -1293,48 +1354,49 @@
 
       <!-- Vídeos Refúgio -->
       <div class="reveal" style="margin-top:90px; text-align:center;">
-        <div class="section-num" style="color: var(--gold);">VÍDEOS</div>
+        <div class="section-num" style="color: var(--gold-deep);">VÍDEOS</div>
         <h3 style="font-family: var(--font-display); font-weight:500; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.08em; margin-bottom:10px;">O Refúgio em movimento</h3>
         <p style="font-style: italic; opacity: 0.88; max-width: 46ch; margin: 0 auto;">Veja a cabana, a natureza e o clima que aguardam vocês.</p>
       </div>
       <div class="video-gallery reveal">
         <div class="video-block">
-          <video src="assets/videos/REFUGIO VIDEO 1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/REFUGIO VIDEO 1.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video src="assets/videos/REFUGIO VIDEO 2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/REFUGIO VIDEO 2.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video src="assets/videos/REFUGIO VIDEO 3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/REFUGIO VIDEO 3.mp4" muted loop playsinline preload="none"></video>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CABANA PARCEIRA · BANGALÔ DONA MARIA -->
-  <section class="cabin light reverse" id="bangalo">
+  <section class="cabin" id="bangalo">
     <div class="container">
       <div class="cabin-grid">
         <div class="cabin-copy reveal">
           <div class="section-num">CABANA PARCEIRA &middot; 2026</div>
           <h3>Bangalô<br/>Dona Maria</h3>
-          <p class="lead">Mais uma cabana parceira que passa a fazer parte da nossa história em 2026 &mdash; com o mesmo cuidado de sempre em receber bem.</p>
+          <p class="lead">Mais uma cabana parceira que passa a fazer parte da nossa história em 2026, com o mesmo cuidado de sempre em receber bem.</p>
           <ul>
             <li>Cabana parceira do Mirante</li>
             <li>Ideal para festas de aniversário personalizadas</li>
             <li>Eventos corporativos e confraternizações</li>
             <li>Mais que hospedagem: um espaço para celebrar</li>
+            <li>Hidromassagem perto da lareira</li>
             <li>Café da manhã incluso</li>
             <li>Check-in 16h &middot; check-out 14h</li>
           </ul>
           <div class="cabin-price">
             <div class="price-item">
-              <span class="price-label">Durante a semana</span>
-              <span class="price-value">R$ 500<small>diária &middot; café incluso</small></span>
+              <span class="price-label">Domingo a quinta</span>
+              <span class="price-value">R$ 650<small>diária &middot; café incluso</small></span>
             </div>
             <div class="price-item">
-              <span class="price-label">Fim de semana</span>
-              <span class="price-value">R$ 700<small>diária &middot; café incluso</small></span>
+              <span class="price-label">Sexta e sábado</span>
+              <span class="price-value">R$ 850<small>diária &middot; café incluso</small></span>
             </div>
           </div>
           <div class="cabin-actions">
@@ -1375,116 +1437,73 @@
 
       <!-- Vídeos Bangalô -->
       <div class="reveal" style="margin-top:90px; text-align:center;">
-        <div class="section-num" style="color: var(--gold-deep);">VÍDEOS</div>
+        <div class="section-num" style="color: var(--gold);">VÍDEOS</div>
         <h3 style="font-family: var(--font-display); font-weight:500; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.08em; margin-bottom:10px;">O Bangalô em movimento</h3>
         <p style="font-style: italic; opacity: 0.88; max-width: 46ch; margin: 0 auto;">Conheça o espaço perfeito para a sua estadia ou celebração.</p>
       </div>
       <div class="video-gallery reveal">
         <div class="video-block">
-          <video src="assets/videos/MARIAV1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/MARIAV1.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video src="assets/videos/MARIAV2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/MARIAV2.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video src="assets/videos/MARIAV3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/MARIAV3.mp4" muted loop playsinline preload="none"></video>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PACOTES -->
+  <!-- DIÁRIAS (antes: pacotes; os pacotes sairam em 09/2026) -->
   <section class="packages" id="pacotes">
     <div class="container">
       <div class="section-head reveal">
-        <div class="section-num">03 &middot; DIÁRIAS &amp; PLANOS</div>
+        <div class="section-num">03 &middot; DIÁRIAS</div>
         <h2 class="section-title">Escolha o seu refúgio</h2>
         <span class="section-rule"></span>
       </div>
 
-      <div class="pkg-group-label reveal">Cabana Amor &amp; Cabana Fé<span>Nossas cabanas próprias, no Mirante</span></div>
+      <div class="pkg-group-label reveal">Cabanas para o casal<span>Amor, Fé, Esperança e Bangalô Dona Maria &middot; mesmo valor nas quatro &middot; café da manhã incluso</span></div>
 
       <div class="packages-grid">
         <div class="package reveal">
           <h4>Durante a semana</h4>
-          <p>Diária na cabana + café da manhã. <em>De domingo a quinta-feira.</em></p>
-          <div class="price"><small>DIÁRIA</small>R$ 500</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20na%20diária%20do%20Mirante%20durante%20a%20semana%20(R$%20500)." class="btn" target="_blank" rel="noopener">Reservar</a>
+          <p>Diária para o casal, com café da manhã. <em>De domingo a quinta-feira.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 650</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20na%20diária%20durante%20a%20semana%20(R$%20650)." class="btn" target="_blank" rel="noopener">Reservar</a>
         </div>
 
         <div class="package reveal">
           <h4>Fim de semana</h4>
-          <p>Diária na cabana + café da manhã. <em>Sexta e sábado.</em></p>
-          <div class="price"><small>DIÁRIA</small>R$ 700</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20na%20diária%20do%20Mirante%20no%20fim%20de%20semana%20(R$%20700)." class="btn" target="_blank" rel="noopener">Reservar</a>
-        </div>
-
-        <div class="package reveal">
-          <h4>Pacote Básico</h4>
-          <p>Diária romântica na cabana + café da manhã. <em>Refeição para duas pessoas.</em></p>
-          <div class="price"><small>A PARTIR DE</small>R$ 700</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Pacote%20Básico%20(R$%20700)." class="btn" target="_blank" rel="noopener">Reservar</a>
-        </div>
-
-        <div class="package reveal">
-          <h4>Pacote Cabana com Sabor</h4>
-          <p>Diária romântica na cabana + almoço. <em>Refeição para duas pessoas.</em></p>
-          <div class="price"><small>A PARTIR DE</small>R$ 800</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Pacote%20Cabana%20com%20Sabor%20(R$%20800)." class="btn" target="_blank" rel="noopener">Reservar</a>
-        </div>
-
-        <div class="package reveal">
-          <h4>Pacote Refúgio</h4>
-          <p>Diária romântica + café da manhã + janta + decoração + hidromassagem. <em>Refeições para duas pessoas.</em></p>
-          <div class="price"><small>A PARTIR DE</small>R$ 890</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Pacote%20Refúgio%20(R$%20890)." class="btn" target="_blank" rel="noopener">Reservar</a>
-        </div>
-
-        <div class="package featured reveal">
-          <h4>Pacote Casal Romântico</h4>
-          <p>Diária romântica + café + almoço + janta + hidromassagem + decoração + espumante. <em>Refeições para duas pessoas.</em></p>
-          <div class="price"><small>A PARTIR DE</small>R$ 1.290</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Pacote%20Casal%20Romântico%20(R$%201.290)." class="btn btn-gold" target="_blank" rel="noopener">Reservar</a>
+          <p>Diária para o casal, com café da manhã. <em>Sexta e sábado.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 850</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20na%20diária%20de%20fim%20de%20semana%20(R$%20850)." class="btn btn-gold" target="_blank" rel="noopener">Reservar</a>
         </div>
       </div>
+      <p class="reveal" style="text-align:center; margin-top: 24px; opacity:0.8;">Na Cabana Fé, que recebe até 4 pessoas: R$ 50 por pessoa a mais, por diária. Crianças até 7 anos não pagam.</p>
 
-      <div class="pkg-group-label second reveal">Refúgio Águas do Goio-Ên<span>Nossa cabana parceira &middot; café da manhã incluso</span></div>
+      <div class="pkg-group-label second reveal">Refúgio Águas do Goio-Ên<span>Nossa cabana parceira &middot; até 6 pessoas &middot; café da manhã à parte</span></div>
 
       <div class="packages-grid">
         <div class="package reveal">
           <h4>Durante a semana</h4>
-          <p>Diária romântica na cabana + café da manhã. <em>De domingo a quinta-feira.</em></p>
-          <div class="price"><small>DIÁRIA</small>R$ 600</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Refúgio%20Águas%20do%20Goio-Ên%20durante%20a%20semana%20(R$%20600)." class="btn" target="_blank" rel="noopener">Reservar</a>
-        </div>
-
-        <div class="package reveal">
-          <h4>Fim de semana</h4>
-          <p>Diária romântica na cabana + café da manhã. <em>Sexta e sábado.</em></p>
+          <p>Diária para o casal, sem café da manhã. <em>De segunda a quinta-feira.</em></p>
           <div class="price"><small>DIÁRIA</small>R$ 800</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Refúgio%20Águas%20do%20Goio-Ên%20no%20fim%20de%20semana%20(R$%20800)." class="btn btn-gold" target="_blank" rel="noopener">Reservar</a>
-        </div>
-      </div>
-
-      <div class="pkg-group-label second reveal">Bangalô Dona Maria<span>Cabana parceira &middot; hospedagem e eventos &middot; café incluso</span></div>
-
-      <div class="packages-grid">
-        <div class="package reveal">
-          <h4>Durante a semana</h4>
-          <p>Diária na cabana + café da manhã. <em>Hospedagem para casais e famílias.</em></p>
-          <div class="price"><small>DIÁRIA</small>R$ 500</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Bangalô%20Dona%20Maria%20durante%20a%20semana%20(R$%20500)." class="btn" target="_blank" rel="noopener">Reservar</a>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Refúgio%20Águas%20do%20Goio-Ên%20durante%20a%20semana%20(R$%20800)." class="btn" target="_blank" rel="noopener">Reservar</a>
         </div>
 
         <div class="package reveal">
           <h4>Fim de semana</h4>
-          <p>Diária na cabana + café da manhã. <em>Sexta e sábado.</em></p>
-          <div class="price"><small>DIÁRIA</small>R$ 700</div>
-          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Bangalô%20Dona%20Maria%20no%20fim%20de%20semana%20(R$%20700)." class="btn" target="_blank" rel="noopener">Reservar</a>
+          <p>Diária para o casal, sem café da manhã. <em>Sexta, sábado e domingo.</em></p>
+          <div class="price"><small>DIÁRIA</small>R$ 1.200</div>
+          <a href="https://wa.me/554998077301?text=Olá!%20Tenho%20interesse%20no%20Refúgio%20Águas%20do%20Goio-Ên%20no%20fim%20de%20semana%20(R$%201.200)." class="btn btn-gold" target="_blank" rel="noopener">Reservar</a>
         </div>
       </div>
+      <p class="reveal" style="text-align:center; margin-top: 24px; opacity:0.8;">Mais R$ 100 de taxa de limpeza e R$ 50 por pessoa a mais, por diária. Cesta de café da manhã: R$ 150 o casal.</p>
 
-      <p style="text-align:center; margin-top: 60px; font-style: italic; opacity:0.75; max-width: 60ch; margin-left:auto; margin-right:auto;">Dúvidas sobre diárias, pacotes e disponibilidade? Fale diretamente com a Patrícia pelo WhatsApp.</p>
+      <p class="reveal" style="text-align:center; margin-top: 60px; max-width: 60ch; margin-left:auto; margin-right:auto;"><strong>Pagamento:</strong> 50% na reserva e 50% no check-in, ou em até 2x sem juros. Pagando o valor total na reserva, você ganha 5% de desconto.</p>
+      <p style="text-align:center; margin-top: 18px; font-style: italic; opacity:0.75; max-width: 60ch; margin-left:auto; margin-right:auto;">Dúvidas sobre diárias e disponibilidade? Fale diretamente com a gente pelo WhatsApp.</p>
     </div>
   </section>
 
@@ -1616,13 +1635,13 @@
       </div>
       <div class="video-gallery reveal">
         <div class="video-block">
-          <video src="assets/videos/PASSEIOVID1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/PASSEIOVID1.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video src="assets/videos/PASSEIOVID2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/PASSEIOVID2.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video src="assets/videos/PASSEIOVID3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <video data-src="assets/videos/PASSEIOVID3.mp4" muted loop playsinline preload="none"></video>
         </div>
       </div>
     </div>
@@ -1649,11 +1668,11 @@
         <p>Bangalô &middot; 16h às 14h</p>
         <p>Refúgio &middot; 18h às 15h</p>
         <p style="margin-top:12px;">Restaurante &middot; 8h às 22h</p>
-        <p style="margin-top:12px;">Sinal de 50% para reserva</p>
+        <p style="margin-top:12px;">50% na reserva e 50% no check-in</p>
       </div>
       <div class="footer-block">
         <h5>LOCALIZAÇÃO</h5>
-        <a href="https://www.google.com/maps?q=-27.287616729736328,-52.70440673828125&amp;z=17&amp;hl=pt-BR" target="_blank" rel="noopener">Mirante &middot; Cabana Amor &amp; Fé</a>
+        <a href="https://www.google.com/maps?q=-27.287616729736328,-52.70440673828125&amp;z=17&amp;hl=pt-BR" target="_blank" rel="noopener">Mirante &middot; Cabanas Amor &amp; Fé</a>
         <a href="https://www.google.com/maps?q=-27.29277801513672,-52.68484878540039&amp;z=17&amp;hl=pt-BR" target="_blank" rel="noopener">Refúgio Águas do Goio-Ên</a>
         <a href="https://www.google.com/maps/search/Bangallo%20Dona%20Maria/@-27.25182342529297,-52.71209716796875,17z?hl=pt-BR" target="_blank" rel="noopener">Bangalô Dona Maria</a>
       </div>
@@ -1686,6 +1705,20 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    // ===== Videos so carregam perto da tela (eram ~40 MB baixados de uma vez) =====
+    const vio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        const v = e.target;
+        if (e.isIntersecting) {
+          if (!v.src) v.src = v.dataset.src;
+          v.play().catch(() => {});
+        } else if (v.src) {
+          v.pause();
+        }
+      });
+    }, { rootMargin: '300px 0px' });
+    document.querySelectorAll('video[data-src]').forEach(v => vio.observe(v));
 
     // ===== Year =====
     document.getElementById('year').textContent = new Date().getFullYear();
