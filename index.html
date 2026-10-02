@@ -13,9 +13,12 @@
   <meta property="og:image" content="assets/imagens/cafe2.jpg" />
   <meta property="og:type" content="website" />
 
+  <link rel="preload" as="image" href="assets/imagens/cafe2-900.jpg" media="(max-width: 900px)" />
+  <link rel="preload" as="image" href="assets/imagens/cafe2.jpg" media="(min-width: 901px)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" /></noscript>
 
   <style>
     /* ---------- Base ---------- */
@@ -53,6 +56,7 @@
     }
 
     img, video { display: block; max-width: 100%; height: auto; }
+    picture { display: contents; } /* o logo em WebP nao muda o layout do <img> */
 
     a { color: inherit; text-decoration: none; }
 
@@ -139,11 +143,12 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('assets/imagens/cafe2.jpg') center/cover no-repeat;
+      background: url('assets/imagens/cafe2-900.jpg') center/cover no-repeat;
       transform: scale(1.05);
       animation: heroZoom 18s ease-in-out infinite alternate;
       z-index: 0;
     }
+    @media (min-width: 901px) { .hero::before { background-image: url('assets/imagens/cafe2.jpg'); } }
     .hero::after {
       content: '';
       position: absolute; inset: 0;
@@ -1005,7 +1010,7 @@
   <!-- HEADER -->
   <header class="site-header" id="siteHeader">
     <a href="#top" class="brand" aria-label="Mirante Cabanas da Serra · início">
-      <img src="assets/imagens/logo.png?v=2" alt="Mirante Cabanas da Serra" />
+      <picture><source srcset="assets/imagens/logo.webp" type="image/webp" /><img src="assets/imagens/logo.png?v=2" alt="Mirante Cabanas da Serra" width="569" height="439" decoding="async" fetchpriority="high" /></picture>
     </a>
     <nav class="nav">
       <a href="#quem-somos">Quem Somos</a>
@@ -1020,7 +1025,7 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-inner">
-      <img src="assets/imagens/logo.png?v=2" alt="Mirante Cabanas da Serra" class="hero-logo" />
+      <picture><source srcset="assets/imagens/logo.webp" type="image/webp" /><img src="assets/imagens/logo.png?v=2" alt="Mirante Cabanas da Serra" class="hero-logo" width="569" height="439" decoding="async" fetchpriority="high" /></picture>
       <p class="hero-tagline">Um refúgio com vista para o Rio Uruguai<br/>Restaurante &amp; cabanas</p>
       <div class="hero-cta">
         <a href="#pacotes" class="btn">Ver diárias</a>
@@ -1087,11 +1092,11 @@
       </div>
       <div class="carousel reveal" data-carousel data-interval="4500" aria-label="Galeria da hidromassagem">
         <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/jacuzzi.jpg" alt="Hidromassagem na cabana, foto 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/jacuzzi1.jpeg" alt="Hidromassagem na cabana, foto 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/jacuzzi2.jpeg" alt="Hidromassagem na cabana, foto 3" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/jacuzzi3.jpeg" alt="Hidromassagem na cabana, foto 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/jacuzzi4.jpg" alt="Hidromassagem na cabana, foto 5" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/jacuzzi.jpg" alt="Hidromassagem na cabana, foto 1" loading="lazy" width="1200" height="1600" srcset="assets/imagens/m/jacuzzi.jpg 800w, assets/imagens/jacuzzi.jpg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/jacuzzi1.jpeg" alt="Hidromassagem na cabana, foto 2" loading="lazy" width="960" height="1280" srcset="assets/imagens/m/jacuzzi1.jpeg 800w, assets/imagens/jacuzzi1.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/jacuzzi2.jpeg" alt="Hidromassagem na cabana, foto 3" loading="lazy" width="1600" height="1200" data-srcset="assets/imagens/m/jacuzzi2.jpeg 800w, assets/imagens/jacuzzi2.jpeg 1600w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/jacuzzi3.jpeg" alt="Hidromassagem na cabana, foto 4" loading="lazy" width="1201" height="1600" data-srcset="assets/imagens/m/jacuzzi3.jpeg 800w, assets/imagens/jacuzzi3.jpeg 1201w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/jacuzzi4.jpg" alt="Hidromassagem na cabana, foto 5" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/jacuzzi4.jpg 800w, assets/imagens/jacuzzi4.jpg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
         </div>
         <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
         <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1137,17 +1142,17 @@
         </div>
         <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria da Cabana Fé">
           <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/FE_NOVA1.jpeg" alt="Cabana Fé, foto 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA2.jpeg" alt="Cabana Fé, foto 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA3.jpeg" alt="Cabana Fé, foto 3" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA4.jpeg" alt="Cabana Fé, foto 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA5.jpeg" alt="Cabana Fé, foto 5" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA6.jpeg" alt="Cabana Fé, foto 6" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA7.jpeg" alt="Cabana Fé, foto 7" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA8.jpeg" alt="Cabana Fé, foto 8" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA9.jpeg" alt="Cabana Fé, foto 9" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA10.jpeg" alt="Cabana Fé, foto 10" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA11.jpeg" alt="Cabana Fé, foto 11" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/FE_NOVA1.jpeg" alt="Cabana Fé, foto 1" loading="lazy" width="1085" height="1450" srcset="assets/imagens/m/FE_NOVA1.jpeg 800w, assets/imagens/FE_NOVA1.jpeg 1085w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/FE_NOVA2.jpeg" alt="Cabana Fé, foto 2" loading="lazy" width="1086" height="1448" srcset="assets/imagens/m/FE_NOVA2.jpeg 800w, assets/imagens/FE_NOVA2.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA3.jpeg" alt="Cabana Fé, foto 3" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/FE_NOVA3.jpeg 800w, assets/imagens/FE_NOVA3.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA4.jpeg" alt="Cabana Fé, foto 4" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/FE_NOVA4.jpeg 800w, assets/imagens/FE_NOVA4.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA5.jpeg" alt="Cabana Fé, foto 5" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/FE_NOVA5.jpeg 800w, assets/imagens/FE_NOVA5.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA6.jpeg" alt="Cabana Fé, foto 6" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/FE_NOVA6.jpeg 800w, assets/imagens/FE_NOVA6.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA7.jpeg" alt="Cabana Fé, foto 7" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/FE_NOVA7.jpeg 800w, assets/imagens/FE_NOVA7.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA8.jpeg" alt="Cabana Fé, foto 8" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/FE_NOVA8.jpeg 800w, assets/imagens/FE_NOVA8.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA9.jpeg" alt="Cabana Fé, foto 9" loading="lazy" width="1085" height="1450" data-srcset="assets/imagens/m/FE_NOVA9.jpeg 800w, assets/imagens/FE_NOVA9.jpeg 1085w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA10.jpeg" alt="Cabana Fé, foto 10" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/FE_NOVA10.jpeg 800w, assets/imagens/FE_NOVA10.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/FE_NOVA11.jpeg" alt="Cabana Fé, foto 11" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/FE_NOVA11.jpeg 800w, assets/imagens/FE_NOVA11.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
           <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1159,7 +1164,7 @@
       <!-- Video Fé -->
       <div style="margin-top:90px; display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:center;" class="cabin-video-row">
         <div class="video-block reveal">
-          <video data-src="assets/videos/fe-2026.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/fe-2026.jpg" data-src="assets/videos/fe-2026.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="reveal">
           <div class="section-num">VÍDEO</div>
@@ -1195,14 +1200,14 @@
         </div>
         <div class="carousel reveal" data-carousel data-interval="5500" aria-label="Galeria da Cabana Amor">
           <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/AMOR_NOVA1.jpeg" alt="Cabana Amor, foto 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/AMOR_NOVA2.jpeg" alt="Cabana Amor, foto 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/AMOR_NOVA3.jpeg" alt="Cabana Amor, foto 3" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/AMOR_NOVA4.jpeg" alt="Cabana Amor, foto 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/AMOR_NOVA5.jpeg" alt="Cabana Amor, foto 5" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/AMOR_NOVA6.jpeg" alt="Cabana Amor, foto 6" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/AMOR_NOVA7.jpeg" alt="Cabana Amor, foto 7" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/AMOR_NOVA8.jpeg" alt="Cabana Amor, foto 8" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/AMOR_NOVA1.jpeg" alt="Cabana Amor, foto 1" loading="lazy" width="1086" height="1448" srcset="assets/imagens/m/AMOR_NOVA1.jpeg 800w, assets/imagens/AMOR_NOVA1.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/AMOR_NOVA2.jpeg" alt="Cabana Amor, foto 2" loading="lazy" width="1086" height="1448" srcset="assets/imagens/m/AMOR_NOVA2.jpeg 800w, assets/imagens/AMOR_NOVA2.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/AMOR_NOVA3.jpeg" alt="Cabana Amor, foto 3" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/AMOR_NOVA3.jpeg 800w, assets/imagens/AMOR_NOVA3.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/AMOR_NOVA4.jpeg" alt="Cabana Amor, foto 4" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/AMOR_NOVA4.jpeg 800w, assets/imagens/AMOR_NOVA4.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/AMOR_NOVA5.jpeg" alt="Cabana Amor, foto 5" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/AMOR_NOVA5.jpeg 800w, assets/imagens/AMOR_NOVA5.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/AMOR_NOVA6.jpeg" alt="Cabana Amor, foto 6" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/AMOR_NOVA6.jpeg 800w, assets/imagens/AMOR_NOVA6.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/AMOR_NOVA7.jpeg" alt="Cabana Amor, foto 7" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/AMOR_NOVA7.jpeg 800w, assets/imagens/AMOR_NOVA7.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/AMOR_NOVA8.jpeg" alt="Cabana Amor, foto 8" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/AMOR_NOVA8.jpeg 800w, assets/imagens/AMOR_NOVA8.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
           <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1219,7 +1224,7 @@
           <p style="font-style: italic; opacity: 0.88; max-width: 42ch;">Veja a luz, o ambiente e o clima que aguardam vocês na sua estadia.</p>
         </div>
         <div class="video-block reveal">
-          <video data-src="assets/videos/amor-2026.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/amor-2026.jpg" data-src="assets/videos/amor-2026.mp4" muted loop playsinline preload="none"></video>
         </div>
       </div>
     </div>
@@ -1247,15 +1252,15 @@
         </div>
         <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria da Tiny House Esperança">
           <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/ESPERANCA1.jpeg" alt="Tiny House Esperança, foto 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA2.jpeg" alt="Tiny House Esperança, foto 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA3.jpeg" alt="Tiny House Esperança, foto 3" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA4.jpeg" alt="Tiny House Esperança, foto 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA5.jpeg" alt="Tiny House Esperança, foto 5" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA6.jpeg" alt="Tiny House Esperança, foto 6" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA7.jpeg" alt="Tiny House Esperança, foto 7" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA8.jpeg" alt="Tiny House Esperança, foto 8" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA9.jpeg" alt="Tiny House Esperança, foto 9" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/ESPERANCA1.jpeg" alt="Tiny House Esperança, foto 1" loading="lazy" width="1086" height="1448" srcset="assets/imagens/m/ESPERANCA1.jpeg 800w, assets/imagens/ESPERANCA1.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/ESPERANCA2.jpeg" alt="Tiny House Esperança, foto 2" loading="lazy" width="1086" height="1448" srcset="assets/imagens/m/ESPERANCA2.jpeg 800w, assets/imagens/ESPERANCA2.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/ESPERANCA3.jpeg" alt="Tiny House Esperança, foto 3" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/ESPERANCA3.jpeg 800w, assets/imagens/ESPERANCA3.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/ESPERANCA4.jpeg" alt="Tiny House Esperança, foto 4" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/ESPERANCA4.jpeg 800w, assets/imagens/ESPERANCA4.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/ESPERANCA5.jpeg" alt="Tiny House Esperança, foto 5" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/ESPERANCA5.jpeg 800w, assets/imagens/ESPERANCA5.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/ESPERANCA6.jpeg" alt="Tiny House Esperança, foto 6" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/ESPERANCA6.jpeg 800w, assets/imagens/ESPERANCA6.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/ESPERANCA7.jpeg" alt="Tiny House Esperança, foto 7" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/ESPERANCA7.jpeg 800w, assets/imagens/ESPERANCA7.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/ESPERANCA8.jpeg" alt="Tiny House Esperança, foto 8" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/ESPERANCA8.jpeg 800w, assets/imagens/ESPERANCA8.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/ESPERANCA9.jpeg" alt="Tiny House Esperança, foto 9" loading="lazy" width="1086" height="1448" data-srcset="assets/imagens/m/ESPERANCA9.jpeg 800w, assets/imagens/ESPERANCA9.jpeg 1086w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
           <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1267,7 +1272,7 @@
       <!-- Video Esperança -->
       <div style="margin-top:90px; display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:center;" class="cabin-video-row">
         <div class="video-block reveal">
-          <video data-src="assets/videos/esperanca.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/esperanca.jpg" data-src="assets/videos/esperanca.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="reveal">
           <div class="section-num">VÍDEO</div>
@@ -1312,27 +1317,27 @@
         </div>
         <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria do Refúgio Águas do Goio-Ên">
           <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/REFÚGIO CARROSSEL 1.jpeg" alt="Refúgio Águas do Goio-Ên, foto 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 2.jpeg" alt="Refúgio Águas do Goio-Ên, foto 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 3.jpeg" alt="Refúgio Águas do Goio-Ên, foto 3" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 4.jpeg" alt="Refúgio Águas do Goio-Ên, foto 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 5.jpeg" alt="Refúgio Águas do Goio-Ên, foto 5" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 6.jpeg" alt="Refúgio Águas do Goio-Ên, foto 6" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 7.jpeg" alt="Refúgio Águas do Goio-Ên, foto 7" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 8.jpeg" alt="Refúgio Águas do Goio-Ên, foto 8" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 9.jpeg" alt="Refúgio Águas do Goio-Ên, foto 9" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 10.jpeg" alt="Refúgio Águas do Goio-Ên, foto 10" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 11.jpeg" alt="Refúgio Águas do Goio-Ên, foto 11" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 12.jpeg" alt="Refúgio Águas do Goio-Ên, foto 12" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 13.jpeg" alt="Refúgio Águas do Goio-Ên, foto 13" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 14.jpeg" alt="Refúgio Águas do Goio-Ên, foto 14" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 15.jpeg" alt="Refúgio Águas do Goio-Ên, foto 15" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 16.jpeg" alt="Refúgio Águas do Goio-Ên, foto 16" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 17.jpeg" alt="Refúgio Águas do Goio-Ên, foto 17" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 18.jpeg" alt="Refúgio Águas do Goio-Ên, foto 18" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 19.jpeg" alt="Refúgio Águas do Goio-Ên, foto 19" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 20.jpeg" alt="Refúgio Águas do Goio-Ên, foto 20" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 21.jpeg" alt="Refúgio Águas do Goio-Ên, foto 21" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/REFÚGIO CARROSSEL 1.jpeg" alt="Refúgio Águas do Goio-Ên, foto 1" loading="lazy" width="1200" height="1600" srcset="assets/imagens/m/REFÚGIO CARROSSEL 1.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 1.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/REFÚGIO CARROSSEL 2.jpeg" alt="Refúgio Águas do Goio-Ên, foto 2" loading="lazy" width="1200" height="1600" srcset="assets/imagens/m/REFÚGIO CARROSSEL 2.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 2.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 3.jpeg" alt="Refúgio Águas do Goio-Ên, foto 3" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 3.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 3.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 4.jpeg" alt="Refúgio Águas do Goio-Ên, foto 4" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 4.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 4.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 5.jpeg" alt="Refúgio Águas do Goio-Ên, foto 5" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 5.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 5.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 6.jpeg" alt="Refúgio Águas do Goio-Ên, foto 6" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 6.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 6.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 7.jpeg" alt="Refúgio Águas do Goio-Ên, foto 7" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 7.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 7.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 8.jpeg" alt="Refúgio Águas do Goio-Ên, foto 8" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 8.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 8.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 9.jpeg" alt="Refúgio Águas do Goio-Ên, foto 9" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 9.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 9.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 10.jpeg" alt="Refúgio Águas do Goio-Ên, foto 10" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 10.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 10.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 11.jpeg" alt="Refúgio Águas do Goio-Ên, foto 11" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 11.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 11.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 12.jpeg" alt="Refúgio Águas do Goio-Ên, foto 12" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 12.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 12.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 13.jpeg" alt="Refúgio Águas do Goio-Ên, foto 13" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 13.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 13.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 14.jpeg" alt="Refúgio Águas do Goio-Ên, foto 14" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 14.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 14.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 15.jpeg" alt="Refúgio Águas do Goio-Ên, foto 15" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 15.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 15.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 16.jpeg" alt="Refúgio Águas do Goio-Ên, foto 16" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 16.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 16.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 17.jpeg" alt="Refúgio Águas do Goio-Ên, foto 17" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 17.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 17.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 18.jpeg" alt="Refúgio Águas do Goio-Ên, foto 18" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 18.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 18.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 19.jpeg" alt="Refúgio Águas do Goio-Ên, foto 19" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 19.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 19.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 20.jpeg" alt="Refúgio Águas do Goio-Ên, foto 20" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 20.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 20.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/REFÚGIO CARROSSEL 21.jpeg" alt="Refúgio Águas do Goio-Ên, foto 21" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REFÚGIO CARROSSEL 21.jpeg 800w, assets/imagens/REFÚGIO CARROSSEL 21.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
           <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1349,13 +1354,13 @@
       </div>
       <div class="video-gallery reveal">
         <div class="video-block">
-          <video data-src="assets/videos/REFUGIO VIDEO 1.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/REFUGIO-VIDEO-1.jpg" data-src="assets/videos/REFUGIO VIDEO 1.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video data-src="assets/videos/REFUGIO VIDEO 2.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/REFUGIO-VIDEO-2.jpg" data-src="assets/videos/REFUGIO VIDEO 2.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video data-src="assets/videos/REFUGIO VIDEO 3.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/REFUGIO-VIDEO-3.jpg" data-src="assets/videos/REFUGIO VIDEO 3.mp4" muted loop playsinline preload="none"></video>
         </div>
       </div>
     </div>
@@ -1396,26 +1401,26 @@
         </div>
         <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria do Bangalô Dona Maria">
           <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/MARIA1.jpeg" alt="Bangalô Dona Maria, foto 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA2.jpeg" alt="Bangalô Dona Maria, foto 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA3.jpeg" alt="Bangalô Dona Maria, foto 3" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA4.jpeg" alt="Bangalô Dona Maria, foto 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA5.jpeg" alt="Bangalô Dona Maria, foto 5" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA6.jpeg" alt="Bangalô Dona Maria, foto 6" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA7.jpeg" alt="Bangalô Dona Maria, foto 7" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA8.jpeg" alt="Bangalô Dona Maria, foto 8" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA9.jpeg" alt="Bangalô Dona Maria, foto 9" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA10.jpeg" alt="Bangalô Dona Maria, foto 10" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA11.jpeg" alt="Bangalô Dona Maria, foto 11" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA12.jpeg" alt="Bangalô Dona Maria, foto 12" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA13.jpeg" alt="Bangalô Dona Maria, foto 13" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA14.jpeg" alt="Bangalô Dona Maria, foto 14" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA15.jpeg" alt="Bangalô Dona Maria, foto 15" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA16.jpeg" alt="Bangalô Dona Maria, foto 16" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA17.jpeg" alt="Bangalô Dona Maria, foto 17" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA18.jpeg" alt="Bangalô Dona Maria, foto 18" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA19.jpeg" alt="Bangalô Dona Maria, foto 19" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/MARIA20.jpeg" alt="Bangalô Dona Maria, foto 20" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/MARIA1.jpeg" alt="Bangalô Dona Maria, foto 1" loading="lazy" width="960" height="1280" srcset="assets/imagens/m/MARIA1.jpeg 800w, assets/imagens/MARIA1.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/MARIA2.jpeg" alt="Bangalô Dona Maria, foto 2" loading="lazy" width="960" height="1280" srcset="assets/imagens/m/MARIA2.jpeg 800w, assets/imagens/MARIA2.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA3.jpeg" alt="Bangalô Dona Maria, foto 3" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA3.jpeg 800w, assets/imagens/MARIA3.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA4.jpeg" alt="Bangalô Dona Maria, foto 4" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA4.jpeg 800w, assets/imagens/MARIA4.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA5.jpeg" alt="Bangalô Dona Maria, foto 5" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA5.jpeg 800w, assets/imagens/MARIA5.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA6.jpeg" alt="Bangalô Dona Maria, foto 6" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA6.jpeg 800w, assets/imagens/MARIA6.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA7.jpeg" alt="Bangalô Dona Maria, foto 7" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA7.jpeg 800w, assets/imagens/MARIA7.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA8.jpeg" alt="Bangalô Dona Maria, foto 8" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA8.jpeg 800w, assets/imagens/MARIA8.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA9.jpeg" alt="Bangalô Dona Maria, foto 9" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA9.jpeg 800w, assets/imagens/MARIA9.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA10.jpeg" alt="Bangalô Dona Maria, foto 10" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA10.jpeg 800w, assets/imagens/MARIA10.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA11.jpeg" alt="Bangalô Dona Maria, foto 11" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA11.jpeg 800w, assets/imagens/MARIA11.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA12.jpeg" alt="Bangalô Dona Maria, foto 12" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA12.jpeg 800w, assets/imagens/MARIA12.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA13.jpeg" alt="Bangalô Dona Maria, foto 13" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA13.jpeg 800w, assets/imagens/MARIA13.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA14.jpeg" alt="Bangalô Dona Maria, foto 14" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA14.jpeg 800w, assets/imagens/MARIA14.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA15.jpeg" alt="Bangalô Dona Maria, foto 15" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA15.jpeg 800w, assets/imagens/MARIA15.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA16.jpeg" alt="Bangalô Dona Maria, foto 16" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA16.jpeg 800w, assets/imagens/MARIA16.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA17.jpeg" alt="Bangalô Dona Maria, foto 17" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA17.jpeg 800w, assets/imagens/MARIA17.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA18.jpeg" alt="Bangalô Dona Maria, foto 18" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA18.jpeg 800w, assets/imagens/MARIA18.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA19.jpeg" alt="Bangalô Dona Maria, foto 19" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA19.jpeg 800w, assets/imagens/MARIA19.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/MARIA20.jpeg" alt="Bangalô Dona Maria, foto 20" loading="lazy" width="960" height="1280" data-srcset="assets/imagens/m/MARIA20.jpeg 800w, assets/imagens/MARIA20.jpeg 960w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
           <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1432,13 +1437,13 @@
       </div>
       <div class="video-gallery reveal">
         <div class="video-block">
-          <video data-src="assets/videos/MARIAV1.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/MARIAV1.jpg" data-src="assets/videos/MARIAV1.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video data-src="assets/videos/MARIAV2.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/MARIAV2.jpg" data-src="assets/videos/MARIAV2.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video data-src="assets/videos/MARIAV3.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/MARIAV3.jpg" data-src="assets/videos/MARIAV3.mp4" muted loop playsinline preload="none"></video>
         </div>
       </div>
     </div>
@@ -1512,12 +1517,12 @@
 
       <div class="carousel wide reveal" data-carousel data-interval="5000" aria-label="Galeria do restaurante" style="margin-bottom:64px;">
         <div class="carousel-track">
-          <div class="carousel-slide active"><img src="assets/imagens/REST1.jpeg" alt="Restaurante Mirante, foto 1" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/imagens/REST2.jpeg" alt="Restaurante Mirante, foto 2" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/imagens/REST3.jpeg" alt="Restaurante Mirante, foto 3" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/imagens/REST4.jpeg" alt="Restaurante Mirante, foto 4" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/imagens/REST5.jpeg" alt="Restaurante Mirante, foto 5" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/imagens/REST6.jpeg" alt="Restaurante Mirante, foto 6" loading="lazy" /></div>
+          <div class="carousel-slide active"><img src="assets/imagens/REST1.jpeg" alt="Restaurante Mirante, foto 1" loading="lazy" width="1200" height="1600" srcset="assets/imagens/m/REST1.jpeg 800w, assets/imagens/REST1.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+          <div class="carousel-slide"><img src="assets/imagens/REST2.jpeg" alt="Restaurante Mirante, foto 2" loading="lazy" width="1200" height="1600" srcset="assets/imagens/m/REST2.jpeg 800w, assets/imagens/REST2.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+          <div class="carousel-slide"><img data-src="assets/imagens/REST3.jpeg" alt="Restaurante Mirante, foto 3" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REST3.jpeg 800w, assets/imagens/REST3.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+          <div class="carousel-slide"><img data-src="assets/imagens/REST4.jpeg" alt="Restaurante Mirante, foto 4" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REST4.jpeg 800w, assets/imagens/REST4.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+          <div class="carousel-slide"><img data-src="assets/imagens/REST5.jpeg" alt="Restaurante Mirante, foto 5" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REST5.jpeg 800w, assets/imagens/REST5.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
+          <div class="carousel-slide"><img data-src="assets/imagens/REST6.jpeg" alt="Restaurante Mirante, foto 6" loading="lazy" width="1200" height="1600" data-srcset="assets/imagens/m/REST6.jpeg 800w, assets/imagens/REST6.jpeg 1200w" sizes="(max-width: 900px) 92vw, 45vw" /></div>
         </div>
         <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
         <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1600,14 +1605,14 @@
         </div>
         <div class="carousel reveal" data-carousel data-interval="5000" aria-label="Galeria do Passeio Roteiro Olhos D&#39;Água">
           <div class="carousel-track">
-            <div class="carousel-slide active"><img src="assets/imagens/PASSEIO.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 1" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/PASSEIO1.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 2" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/PASSEIO2.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 3" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/PASSEIO3.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 4" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/PASSEIO4.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 5" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/PASSEIO5.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 6" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/PASSEIO6.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 7" loading="lazy" /></div>
-            <div class="carousel-slide"><img src="assets/imagens/PASSEIO7.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 8" loading="lazy" /></div>
+            <div class="carousel-slide active"><img src="assets/imagens/PASSEIO.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 1" loading="lazy" width="900" height="1600" /></div>
+            <div class="carousel-slide"><img src="assets/imagens/PASSEIO1.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 2" loading="lazy" width="900" height="1600" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/PASSEIO2.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 3" loading="lazy" width="900" height="1600" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/PASSEIO3.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 4" loading="lazy" width="900" height="1600" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/PASSEIO4.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 5" loading="lazy" width="900" height="1600" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/PASSEIO5.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 6" loading="lazy" width="900" height="1600" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/PASSEIO6.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 7" loading="lazy" width="900" height="1600" /></div>
+            <div class="carousel-slide"><img data-src="assets/imagens/PASSEIO7.jpeg" alt="Passeio Roteiro Olhos D&#39;Água, foto 8" loading="lazy" width="900" height="1600" /></div>
           </div>
           <button class="carousel-btn prev" aria-label="Foto anterior">&#10094;</button>
           <button class="carousel-btn next" aria-label="Próxima foto">&#10095;</button>
@@ -1624,13 +1629,13 @@
       </div>
       <div class="video-gallery reveal">
         <div class="video-block">
-          <video data-src="assets/videos/PASSEIOVID1.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/PASSEIOVID1.jpg" data-src="assets/videos/PASSEIOVID1.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video data-src="assets/videos/PASSEIOVID2.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/PASSEIOVID2.jpg" data-src="assets/videos/PASSEIOVID2.mp4" muted loop playsinline preload="none"></video>
         </div>
         <div class="video-block">
-          <video data-src="assets/videos/PASSEIOVID3.mp4" muted loop playsinline preload="none"></video>
+          <video poster="assets/imagens/poster/PASSEIOVID3.jpg" data-src="assets/videos/PASSEIOVID3.mp4" muted loop playsinline preload="none"></video>
         </div>
       </div>
     </div>
@@ -1641,7 +1646,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img src="assets/imagens/logo.png?v=2" alt="Mirante Cabanas da Serra" />
+          <picture><source srcset="assets/imagens/logo.webp" type="image/webp" /><img src="assets/imagens/logo.png?v=2" alt="Mirante Cabanas da Serra" width="569" height="439" decoding="async" loading="lazy" /></picture>
         </div>
         <p class="footer-tag">Um refúgio com vista para o Rio Uruguai. Conforto, silêncio e uma intimidade incrível para vocês dois.</p>
       </div>
@@ -1734,6 +1739,13 @@
       const curEl  = root.querySelector('.cur');
       const interval = parseInt(root.getAttribute('data-interval'), 10) || 5000;
 
+      function carrega(sl) {
+        const im = sl && sl.querySelector('img[data-src]');
+        if (!im) return;
+        if (im.dataset.srcset) im.srcset = im.dataset.srcset;
+        im.src = im.dataset.src;
+        im.removeAttribute('data-src'); im.removeAttribute('data-srcset');
+      }
       let index = 0;
       let timer = null;
       let paused = false;
@@ -1753,6 +1765,7 @@
         dots[index].classList.remove('active');
         index = (i + total) % total;
         slides[index].classList.add('active');
+        carrega(slides[index]); carrega(slides[(index + 1) % total]);
         dots[index].classList.add('active');
         if (curEl) curEl.textContent = index + 1;
         if (userTriggered) restart();
